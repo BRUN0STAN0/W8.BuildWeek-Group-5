@@ -1,1 +1,105 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+body {
+  margin: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#navbar-bottom {
+  position: fixed;
+  bottom: 0;
+  height: 90px;
+  background-color: #212121;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+#navbar-bottom #navbar-left {
+  width: 33vw;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+#navbar-bottom #navbar-left .play-back {
+  margin: 10px;
+  padding: 0;
+  font-size: 14px;
+}
+#navbar-bottom #navbar-left .play-back #author {
+  color: gray;
+  font-size: 12px;
+}
+#navbar-bottom #navbar-center {
+  width: 33vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#navbar-bottom #navbar-center .track-button {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  color: rgb(208, 208, 208);
+  padding-bottom: 10px;
+}
+#navbar-bottom #navbar-center .track-button i {
+  padding-inline: 10px;
+}
+#navbar-bottom #navbar-center .track-button i:hover {
+  color: white;
+}
+#navbar-bottom #navbar-center .track-button .fa-circle-play {
+  color: white;
+  font-size: 35px;
+}
+#navbar-bottom #navbar-center .track-play {
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  color: rgb(204, 204, 204);
+}
+#navbar-bottom #navbar-center .track-play .track-default {
+  width: 30vw;
+  height: 4px;
+  background-color: gray;
+  border-radius: 50px;
+  margin: 5px;
+}
+#navbar-bottom #navbar-center .track-play #track-seconds {
+  position: relative;
+  left: 10px;
+  width: 60px;
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+}
+#navbar-bottom #navbar-right {
+  width: 33vw;
+  margin: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  color: gray;
+}
+#navbar-bottom #navbar-right i {
+  padding-right: 20px;
+}
+#navbar-bottom #navbar-right i:hover {
+  color: white;
+}
+#navbar-bottom #navbar-right .volume-default {
+  width: 80px;
+  height: 4px;
+  background-color: gray;
+  border-radius: 50px;
+}
+#navbar-bottom #navbar-right #volume-set {
+  position: relative;
+  top: 4px;
+  width: 20px;
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+}

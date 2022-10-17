@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Spotify App" />
+    <script src="https://kit.fontawesome.com/199573f819.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/app.css" />
     <title>Spotify</title>
   </head>
@@ -38,9 +39,38 @@
 
     <!-- * START NAVBAR BOTTOM [BRUNO] -->
     <section id="navbar-bottom">
-      <div id="navbar-left"></div>
-      <div id="navbar-center"></div>
-      <div id="navbar-right"></div>
+      <div id="navbar-left">
+        <img src="https://picsum.photos/60/60" alt="music" />
+        <div class="play-back">
+          <p id="title-song">Hymn to the Seas (From "Titanic")</p>
+          <p id="author">Nicola Lerra</p>
+        </div>
+        <i class="bi bi-heart"></i>
+      </div>
+      <div id="navbar-center">
+        <div class="track-button">
+          <i class="fa-solid fa-shuffle"></i>
+          <i class="fa-solid fa-backward-step"></i>
+          <i class="fa-solid fa-circle-play"></i>
+          <i class="fa-solid fa-forward-step"></i>
+          <i class="bi bi-repeat"></i>
+        </div>
+        <div class="track-play">
+          0.12
+          <div id="track-seconds"></div>
+          <div class="track-default"></div>
+          2.05
+        </div>
+      </div>
+      <div id="navbar-right">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-computer"></i>
+        <i class="fa-solid fa-volume-off"></i>
+        <div class="volume">
+          <div id="volume-set"></div>
+          <div class="volume-default"></div>
+        </div>
+      </div>
     </section>
     <!-- ! END NAVBAR BOTTOM [BRUNO] -->
   </body>
