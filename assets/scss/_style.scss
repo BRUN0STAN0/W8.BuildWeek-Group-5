@@ -23,6 +23,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: white;
+  cursor: default;
   #navbar-left {
     width: 33vw;
     margin: 10px;
@@ -32,6 +33,11 @@ body {
       margin: 10px;
       padding: 0;
       font-size: 14px;
+      #title-song {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
       #author {
         color: gray;
         font-size: 12px;
@@ -81,10 +87,13 @@ body {
       #track-seconds {
         position: relative;
         left: 10px;
-        width: 60px;
+        width: 0%;
         height: 4px;
         background-color: rgb(255, 255, 255);
         border-radius: 50px;
+      }
+      &:hover #track-seconds {
+        background-color: $primary;
       }
     }
   }
@@ -101,19 +110,24 @@ body {
         color: white;
       }
     }
-    .volume-default {
-      width: 80px;
-      height: 4px;
-      background-color: gray;
-      border-radius: 50px;
-    }
-    #volume-set {
-      position: relative;
-      top: 4px;
-      width: 20px;
-      height: 4px;
-      background-color: rgb(255, 255, 255);
-      border-radius: 50px;
+    .volume {
+      .volume-default {
+        width: 80px;
+        height: 4px;
+        background-color: gray;
+        border-radius: 50px;
+      }
+      #volume-set {
+        position: relative;
+        top: 4px;
+        width: 20px;
+        height: 4px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50px;
+      }
+      &:hover #volume-set {
+        background-color: $primary;
+      }
     }
   }
 }

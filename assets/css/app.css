@@ -15,6 +15,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: white;
+  cursor: default;
 }
 #navbar-bottom #navbar-left {
   width: 33vw;
@@ -26,6 +27,9 @@ body {
   margin: 10px;
   padding: 0;
   font-size: 14px;
+}
+#navbar-bottom #navbar-left .play-back #title-song:hover {
+  text-decoration: underline;
 }
 #navbar-bottom #navbar-left .play-back #author {
   color: gray;
@@ -75,10 +79,13 @@ body {
 #navbar-bottom #navbar-center .trackbar #track-seconds {
   position: relative;
   left: 10px;
-  width: 60px;
+  width: 0%;
   height: 4px;
   background-color: rgb(255, 255, 255);
   border-radius: 50px;
+}
+#navbar-bottom #navbar-center .trackbar:hover #track-seconds {
+  background-color: #1ED760;
 }
 #navbar-bottom #navbar-right {
   width: 33vw;
@@ -94,17 +101,20 @@ body {
 #navbar-bottom #navbar-right i:hover {
   color: white;
 }
-#navbar-bottom #navbar-right .volume-default {
+#navbar-bottom #navbar-right .volume .volume-default {
   width: 80px;
   height: 4px;
   background-color: gray;
   border-radius: 50px;
 }
-#navbar-bottom #navbar-right #volume-set {
+#navbar-bottom #navbar-right .volume #volume-set {
   position: relative;
   top: 4px;
   width: 20px;
   height: 4px;
   background-color: rgb(255, 255, 255);
   border-radius: 50px;
+}
+#navbar-bottom #navbar-right .volume:hover #volume-set {
+  background-color: #1ED760;
 }
