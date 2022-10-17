@@ -23,6 +23,7 @@ body {
     border: 1px solid black;
     padding: 10px;
     background-color: black;
+    
     h3{
         color: white;
         font-size: 17px;
@@ -84,8 +85,7 @@ body {
         font-weight: 700;
         font-family: sans-serif;
         padding: 2em 1em;
-        position: fixed;
-        right: 0;
+        float: right;
     }
     #header_sidebar-right {
         display: flex;
