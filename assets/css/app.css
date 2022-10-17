@@ -119,3 +119,52 @@ body {
 #navbar-bottom #navbar-right .volume:hover #volume-set {
   background-color: #1ED760;
 }
+#sidebar-left {
+  width: 20%;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: #212121;
+}
+#sidebar-left h3 {
+  color: white;
+  font-size: 17px;
+}
+#sidebar-left h3 i {
+  margin-right: 10px;
+}
+#sidebar-left p {
+  color: white;
+}
+#sidebar-left a {
+  color: white;
+  text-decoration: none;
+}
+#sidebar-left hr {
+  opacity: 0.2;
+}
+#sidebar-left .scrollbar {
+  overflow-y: scroll;
+  height: 550px;
+}
+#sidebar-left ::-webkit-scrollbar {
+  width: 10px;
+}
+#sidebar-left ::-webkit-scrollbar-track {
+  background: #212121;
+}
+#sidebar-left ::-webkit-scrollbar-thumb {
+  background: #888;
+}
+#sidebar-left ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+#sidebar-left .dots {
+  margin-bottom: 5px;
+  color: white;
+}
+#sidebar-left .bi-bookmark-heart-fill {
+  color: rgb(124, 124, 167);
+}
+#sidebar-left .bi-journal-bookmark-fill {
+  color: green;
+}
