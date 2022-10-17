@@ -12,8 +12,15 @@ body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+.homepage_container {
+  display: flex;
+}
+.homepage_container main {
+  width: 60vw;
+}
+
 #sidebar-left {
-  width: 20%;
+  width: 20vw;
   border: 1px solid black;
   padding: 10px;
   background-color: black;
@@ -62,6 +69,9 @@ body {
   color: green;
 }
 
+#sidebar-right {
+  width: 20vw;
+}
 #sidebar-right #container_sidebar-right {
   width: 20vw;
   height: 100vh;
@@ -71,7 +81,6 @@ body {
   font-weight: 700;
   font-family: sans-serif;
   padding: 2em 1em;
-  float: right;
 }
 #sidebar-right #header_sidebar-right {
   display: flex;

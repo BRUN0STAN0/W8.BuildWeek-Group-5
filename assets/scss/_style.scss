@@ -16,10 +16,18 @@ body {
 // ! END GENERAL SETTINGS -->
 
 
+.homepage_container {
+  display: flex;
+  
+  
+  main {
+    width: 60vw;
+  }
+}
 
 // * START SIDEBAR-LEFT [ANTONINO] -->
 #sidebar-left{
-    width:20%;
+    width:20vw;
     border: 1px solid black;
     padding: 10px;
     background-color: black;
@@ -75,6 +83,7 @@ body {
 // * START SIDEBAR-RIGHT [ROBERTO] -->
 
 #sidebar-right {
+    width: 20vw;
     
     #container_sidebar-right {
         width: 20vw;
@@ -85,7 +94,7 @@ body {
         font-weight: 700;
         font-family: sans-serif;
         padding: 2em 1em;
-        float: right;
+        
     }
     #header_sidebar-right {
         display: flex;
