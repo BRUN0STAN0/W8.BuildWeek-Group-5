@@ -61,6 +61,7 @@ body {
 }
 #navbar-bottom #navbar-center .track-buttons .fa-circle-pause {
   font-size: 35px;
+  display: none;
 }
 #navbar-bottom #navbar-center .trackbar {
   display: flex;
