@@ -1,8 +1,94 @@
+@import "mixins";
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+}
+
 // * START SIDEBAR-LEFT [ANTONINO] -->
 // ! END SIDEBAR-LEFT [ANTONINO] -->
 
 
 // * START SIDEBAR-RIGHT [ROBERTO] -->
+
+#sidebar-right {
+    
+    #container_sidebar-right {
+        width: 20vw;
+        height: 100vh;
+        background-color: black; 
+        color: lightgray; 
+        font-size: 0.9rem;
+        font-weight: 700;
+        font-family: sans-serif;
+        float: right;
+        padding: 2em 1em;
+    }
+    #header_sidebar-right {
+        display: flex;
+        justify-content: space-between;
+        p {
+            display: inline-block;
+            color: white;
+        }
+        #sb-right_header-icons {
+            font-size: 1.1rem;
+        }
+    }
+    #container_friends {
+        margin-top: 2.5em;
+        font-weight: 400;
+        
+        #friend1 {
+            @include friend;
+            .friend_profile-img {
+                background-image: url("../../img_assets/pexels-andrea-piacquadio-3760043.jpg");
+                @include friend_profile-img;
+            }
+        }
+
+        #friend2 {
+            @include friend;
+            .friend_profile-img {
+                background-image: url("../../img_assets/pexels-mart-production-8869292.jpg");
+                @include friend_profile-img;
+            }
+        }
+
+        #friend3 {
+            @include friend;
+            .friend_profile-img{
+                background-image: url("../../img_assets/pexels-анастасия-триббиани-9314632.jpg");
+                @include friend_profile-img;
+            }
+        }
+
+        .friend_last-seen {
+            font-size: 0.7rem;
+        }
+
+        .container_profile-info {
+            display: flex;
+        }
+
+        .friend_name {
+            font-weight: 600;
+        }
+
+        .friend_activity-info p {
+            font-size: 0.8rem;
+        }
+
+        .friend_last-seen {
+            font-size: 0.7rem;
+        }
+        
+
+    }
+}
 // ! END SIDEBAR-RIGHT [ROBERTO] -->
 
 // * START NAVBAR BOTTOM [BRUNO] -->
