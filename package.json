@@ -1,0 +1,20 @@
+{
+  "name": "w8.buildweek-group-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass --no-source-map assets/scss/app.scss assets/css/app.css -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BRUN0STAN0/W8.BuildWeek-Group-5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BRUN0STAN0/W8.BuildWeek-Group-5/issues"
+  },
+  "homepage": "https://github.com/BRUN0STAN0/W8.BuildWeek-Group-5#readme"
+}
