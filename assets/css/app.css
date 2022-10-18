@@ -338,7 +338,7 @@ main #albums-ads i {
 }
 
 #navbar-bottom {
-  border-top: 1px solid gray;
+  border-top: 1px solid rgb(56, 56, 56);
   position: fixed;
   bottom: 0;
   height: 90px;
@@ -355,6 +355,10 @@ main #albums-ads i {
   margin: 10px;
   display: flex;
   align-items: center;
+}
+#navbar-bottom #navbar-left img {
+  width: 60px;
+  height: 60px;
 }
 #navbar-bottom #navbar-left .play-back {
   margin: 10px;
@@ -381,6 +385,7 @@ main #albums-ads i {
   align-items: center;
   font-size: 20px;
   color: rgb(208, 208, 208);
+  margin-bottom: 7px;
 }
 #navbar-bottom #navbar-center .track-buttons i {
   padding-inline: 10px;
