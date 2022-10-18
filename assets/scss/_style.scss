@@ -26,7 +26,7 @@ body {
   padding: 10px;
   padding-left: 1.5em;
   background-color: black;
-
+  overflow-y: hidden;
   h3 {
     color: lightgray;
     font-size: 0.9rem;
@@ -58,7 +58,7 @@ body {
   }
   .scrollbar {
     overflow-y: scroll;
-    height: 70vh;
+    height: 50vh;
   }
   ::-webkit-scrollbar {
     width: 10px;
@@ -192,7 +192,7 @@ main {
   bottom: 0;
   height: 90px;
   background-color: $bg-dark;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -307,3 +307,19 @@ main {
   }
 }
 // ! END NAVBAR BOTTOM [BRUNO] -->
+
+
+
+@media screen and (max-width: 800px) {
+  #sidebar-left {
+    display: none;
+  }
+
+  #sidebar-right {
+    display: none;
+  }
+
+  main {
+    width: 100vw;
+  }
+}
