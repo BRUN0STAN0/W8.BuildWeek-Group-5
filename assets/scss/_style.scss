@@ -4,159 +4,164 @@
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
-    padding: 0;
-    margin:0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 // ! END GENERAL SETTINGS -->
 
-
 .homepage_container {
   display: flex;
-  
-  
+
   main {
     width: 60vw;
   }
 }
 
 // * START SIDEBAR-LEFT [ANTONINO] -->
-#sidebar-left{
-    width:20vw;
-    border: 1px solid black;
-    padding: 10px;
-    background-color: black;
-    
-    h3{
-        color: white;
-        font-size: 17px;
-    }
-    h3 i{
-        margin-right: 10px;
-    }
-    p{
-        color: white;
-    }
-    a{
-        color: white;
-        text-decoration: none;
-    }
-    hr{
-        opacity: 0.2;
-    }
-    .scrollbar{
-        overflow-y: scroll;
-        height: 550px;
-    }
-     ::-webkit-scrollbar{
-         width: 10px;
-         
-     }
-     ::-webkit-scrollbar-track{
-         background: $bg-dark;
-     }
-     ::-webkit-scrollbar-thumb {
-         background: #888; 
-     }
-     ::-webkit-scrollbar-thumb:hover {
-         background: #555; 
-     }
-    .dots{
-        margin-bottom: 5px;
-        color:white
-    }
-    .bi-bookmark-heart-fill{
-        color: rgb(124, 124, 167)
-    }
-    .bi-journal-bookmark-fill{
-        color: green;
-    }
+#sidebar-left {
+  width: 20vw;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: black;
+
+  h3 {
+    color: white;
+    font-size: 17px;
+  }
+  h3 i {
+    margin-right: 10px;
+  }
+  p {
+    color: white;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  hr {
+    opacity: 0.2;
+  }
+  .scrollbar {
+    overflow-y: scroll;
+    height: 550px;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: $bg-dark;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  .dots {
+    margin-bottom: 5px;
+    color: white;
+  }
+  .bi-bookmark-heart-fill {
+    color: rgb(124, 124, 167);
+  }
+  .bi-journal-bookmark-fill {
+    color: green;
+  }
 }
 
 // ! END SIDEBAR-LEFT [ANTONINO] -->
 
+// * START ALBUM ADS [ANTONINO] -->
+
+// ! END ALBUM ADS [ANTONINO] -->
+
+//  * START ALBUM FAVORITES [ROBERTO] -->
+
+// ! END ALBUM FAVORITES [ROBERTO] -->
+
+// * START ALBUM RECOMMENDED [BRUNO] -->
+
+// ! END ALBUM RECOMMENDED [BRUNO] -->
+
 // * START SIDEBAR-RIGHT [ROBERTO] -->
 
 #sidebar-right {
+  width: 20vw;
+
+  #container_sidebar-right {
     width: 20vw;
-    
-    #container_sidebar-right {
-        width: 20vw;
-        height: 100vh;
-        background-color: black; 
-        color: lightgray; 
-        font-size: 0.9rem;
-        font-weight: 700;
-        font-family: sans-serif;
-        padding: 2em 1em;
-        
+    height: 100vh;
+    background-color: black;
+    color: lightgray;
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-family: sans-serif;
+    padding: 2em 1em;
+  }
+  #header_sidebar-right {
+    display: flex;
+    justify-content: space-between;
+    p {
+      display: inline-block;
+      color: white;
     }
-    #header_sidebar-right {
-        display: flex;
-        justify-content: space-between;
-        p {
-            display: inline-block;
-            color: white;
-        }
-        #sb-right_header-icons {
-            font-size: 1.1rem;
-        }
+    #sb-right_header-icons {
+      font-size: 1.1rem;
     }
-    #container_friends {
-        margin-top: 2.5em;
-        font-weight: 400;
-        
-        #friend1 {
-            @include friend;
-            .friend_profile-img {
-                background-image: url("../../img_assets/pexels-andrea-piacquadio-3760043.jpg");
-                @include friend_profile-img;
-            }
-        }
+  }
+  #container_friends {
+    margin-top: 2.5em;
+    font-weight: 400;
 
-        #friend2 {
-            @include friend;
-            .friend_profile-img {
-                background-image: url("../../img_assets/pexels-mart-production-8869292.jpg");
-                @include friend_profile-img;
-            }
-        }
-
-        #friend3 {
-            @include friend;
-            .friend_profile-img{
-                background-image: url("../../img_assets/pexels-анастасия-триббиани-9314632.jpg");
-                @include friend_profile-img;
-            }
-        }
-
-        .friend_last-seen {
-            font-size: 0.7rem;
-        }
-
-        .container_profile-info {
-            display: flex;
-        }
-
-        .friend_name {
-            font-weight: 600;
-        }
-
-        .friend_activity-info p {
-            font-size: 0.8rem;
-        }
-
-        .friend_last-seen {
-            font-size: 0.7rem;
-        }
-        
-
+    #friend1 {
+      @include friend;
+      .friend_profile-img {
+        background-image: url("../../img_assets/pexels-andrea-piacquadio-3760043.jpg");
+        @include friend_profile-img;
+      }
     }
+
+    #friend2 {
+      @include friend;
+      .friend_profile-img {
+        background-image: url("../../img_assets/pexels-mart-production-8869292.jpg");
+        @include friend_profile-img;
+      }
+    }
+
+    #friend3 {
+      @include friend;
+      .friend_profile-img {
+        background-image: url("../../img_assets/pexels-анастасия-триббиани-9314632.jpg");
+        @include friend_profile-img;
+      }
+    }
+
+    .friend_last-seen {
+      font-size: 0.7rem;
+    }
+
+    .container_profile-info {
+      display: flex;
+    }
+
+    .friend_name {
+      font-weight: 600;
+    }
+
+    .friend_activity-info p {
+      font-size: 0.8rem;
+    }
+
+    .friend_last-seen {
+      font-size: 0.7rem;
+    }
+  }
 }
 // ! END SIDEBAR-RIGHT [ROBERTO] -->
 
