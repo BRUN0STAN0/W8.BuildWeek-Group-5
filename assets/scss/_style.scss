@@ -141,6 +141,12 @@ main {
         border-radius: 500px;
         padding: 5px;
       }
+      .user {
+        display: inline;
+        @media screen and (max-width: 1200px) {
+          display: none;
+        }
+      }
     }
   }
   // ! END MAIN UTENTE [BRUNO]

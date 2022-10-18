@@ -137,6 +137,14 @@ main #main-utente .developers .bi-person {
   border-radius: 500px;
   padding: 5px;
 }
+main #main-utente .developers .user {
+  display: inline;
+}
+@media screen and (max-width: 1200px) {
+  main #main-utente .developers .user {
+    display: none;
+  }
+}
 main .album-title-recommended {
   padding-block: 20px;
   font-size: 22px;
