@@ -1,3 +1,6 @@
+let previewImg = document.querySelectorAll("#preview-img");
+let audio;
+
 window.onload = () => {
   loadJSON();
 };
@@ -10,7 +13,17 @@ async function loadJSON() {
 }
 
 function iterateArray(musicArray) {
-  let previewImg = document.querySelectorAll("#preview-img");
+  // * START CICLO PER LINKARE L'AUDIO
+  for (let preview of previewImg) {
+    preview.addEventListener("click", playFunction);
+    let p = document.createElement("p");
+    p.classList.add("link-mp3");
+    for (let m of musicArray) {
+      p.innerHTML = m.preview;
+    }
+    preview.parentElement.appendChild(p);
+  }
+  // ! END CICLO PER LINKARE L'AUDIO
   let title = document.querySelectorAll("#title-song");
   let author = document.querySelectorAll("#author");
   for (let a of author) {
@@ -24,11 +37,6 @@ function iterateArray(musicArray) {
       }
     }
   }
-  selectSong(title[0]);
-}
-
-function selectSong(eventClick) {
-  console.log(eventClick);
 }
 
 // * START TRACKBAR
@@ -46,22 +54,36 @@ let trackDefault = document.getElementsByClassName("track-default")[0];
 
 playAds.addEventListener("click", playFunction);
 play.addEventListener("click", playFunction);
+pause.addEventListener("click", pauseFunction);
 
 function playFunction() {
-  isPlay = true;
+  if (isPlay) {
+    pauseFunction();
+    resetTrackBarSeconds();
+  }
   play.style.display = "none";
   pause.style.display = "inline";
   pauseTrackBarSeconds();
   pauseSeconds();
+  selectSongPlay(previewImg);
+  isPlay = true;
 }
 
-pause.addEventListener("click", () => {
+function pauseFunction() {
   isPlay = false;
   play.style.display = "inline";
   pause.style.display = "none";
+  audio.pause();
   intervalTrackBarSeconds;
   intervalSeconds;
-});
+}
+
+function selectSongPlay(eventClick) {
+  console.log(number);
+  let linkMp3 = eventClick[0].parentElement.children[3].innerHTML;
+  audio = new Audio(linkMp3);
+  audio.play();
+}
 
 function startTrackBarSeconds() {
   if (isPlay) {
@@ -73,6 +95,15 @@ function startTrackBarSeconds() {
     timer++;
     timer2--;
   }
+}
+
+function resetTrackBarSeconds() {
+  trackSeconds.style.width = `0%`;
+  trackDefault.style.width = `100%`;
+  timer = 0;
+  timer2 = 100;
+  seconds = 0;
+  minutes = 0;
 }
 const intervalTrackBarSeconds = setInterval(startTrackBarSeconds, 1000);
 

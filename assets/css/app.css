@@ -573,3 +573,6 @@ main #albums-recommended .album-recommended:hover {
     width: 100vw;
   }
 }
+.link-mp3 {
+  display: none;
+}
