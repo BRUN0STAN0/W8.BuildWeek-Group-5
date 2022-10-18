@@ -178,6 +178,64 @@ main #albums-recommended .album-recommended:hover {
   transition: 0.5s;
 }
 
+main #albums-ads {
+  border: 0px solid black;
+  display: flex;
+  padding: 20px;
+  background: linear-gradient(20deg, rgb(0, 0, 0) 39%, rgb(50, 50, 51) 98%);
+  border-radius: 5px;
+}
+main #albums-ads img {
+  border-radius: 5px;
+  width: 200px;
+}
+main #albums-ads .colum {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  font-size: 1.8rem;
+}
+main #albums-ads #title-song {
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+main #albums-ads .button {
+  border-radius: 40px;
+  padding: 20px;
+  margin-top: 15px;
+  width: 5vw;
+  background: #1ED760;
+  font-weight: bold;
+}
+main #albums-ads .button-2 {
+  border-radius: 40px;
+  padding: 20px;
+  margin-top: 15px;
+  width: 5vw;
+  background: black;
+  color: white;
+  border: 0.5px solid grey;
+  font-weight: bold;
+}
+main #albums-ads .button-3 {
+  background: rgb(50, 50, 51);
+  color: grey;
+  border-radius: 10px;
+  border: 0px;
+  padding: 5px;
+  justify-content: flex-end;
+  font-weight: bold;
+}
+main #albums-ads #btn-container {
+  margin-left: auto;
+}
+main #albums-ads p {
+  font-size: 16px;
+}
+main #albums-ads i {
+  margin: 20px;
+  color: grey;
+}
+
 #sidebar-right {
   width: 20vw;
 }
