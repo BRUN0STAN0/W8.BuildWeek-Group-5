@@ -10,7 +10,7 @@
 
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 // ! END GENERAL SETTINGS -->
 
@@ -94,6 +94,20 @@ main {
   height: 100vh;
   color: white;
   padding: 1em 30px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: black;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
   // ! END SIDEBAR-LEFT [ANTONINO] -->
   // * START MAIN UTENTE [BRUNO]
   #main-utente {
@@ -149,65 +163,66 @@ main {
       }
     }
   }
+
   // ! END MAIN UTENTE [BRUNO]
   // * START ALBUM ADS [ANTONINO] -->
-#albums-ads{
-  border:0px solid black;
-  display: flex;
-  padding: 20px;
-  background: linear-gradient(20deg, rgba(0,0,0,1) 39%, rgba(50,50,51,1) 98%);
-  border-radius:5px;
-  img{
-    border-radius:5px;
-    width:200px;
-  }
-  .colum{
-    padding-bottom:20px;
-    padding-left: 20px;
-    font-size: 1.8rem;
-  }
-  #title-song{
-    font-weight: 600;
-    letter-spacing: 3px;
-  }
-  .button{
-    border-radius: 40px;
+  #albums-ads {
+    border: 0px solid black;
+    display: flex;
     padding: 20px;
-    margin-top: 15px;
-    width: 120px;
-    background: $primary;
-    font-weight: bold;
+    background: linear-gradient(20deg, rgba(0, 0, 0, 1) 39%, rgba(50, 50, 51, 1) 98%);
+    border-radius: 5px;
+    img {
+      border-radius: 5px;
+      width: 200px;
+    }
+    .colum {
+      padding-bottom: 20px;
+      padding-left: 20px;
+      font-size: 1.8rem;
+    }
+    #title-song {
+      font-weight: 600;
+      letter-spacing: 3px;
+    }
+    .button {
+      border-radius: 40px;
+      padding: 20px;
+      margin-top: 15px;
+      width: 120px;
+      background: $primary;
+      font-weight: bold;
+    }
+    .button-2 {
+      border-radius: 40px;
+      padding: 20px;
+      margin-top: 15px;
+      width: 120px;
+      background: black;
+      color: white;
+      border: 0.5px solid grey;
+      font-weight: bold;
+    }
+    .button-3 {
+      background: rgb(50, 50, 51);
+      color: grey;
+      border-radius: 10px;
+      border: 0px;
+      padding: 5px;
+      justify-content: flex-end;
+      font-weight: bold;
+    }
+    #btn-container {
+      margin-left: auto;
+    }
+    p {
+      font-size: 16px;
+    }
+    i {
+      margin: 20px;
+      color: grey;
+    }
   }
-  .button-2{
-    border-radius: 40px;
-    padding: 20px;
-    margin-top: 15px;
-    width: 120px;
-    background: black;
-    color:white;
-    border: 0.5px solid grey;
-    font-weight: bold;
-  }
-  .button-3{
-    background:rgb(50,50,51);
-    color:grey;
-    border-radius:10px;
-    border: 0px;
-    padding:5px;
-    justify-content: flex-end;
-    font-weight: bold;
-  }
-  #btn-container{
-    margin-left: auto;
-  }
-  p{
-    font-size:16px;
-  }
-  i{
-    margin:20px;
-    color:grey;
-  }
-}
 
   // ! END ALBUM ADS [ANTONINO] -->
 
@@ -264,6 +279,7 @@ main {
   }
   #albums-recommended {
     display: flex;
+    margin-bottom: 100vh;
     cursor: pointer;
     img {
       border-radius: 5px;
@@ -385,6 +401,7 @@ main {
   align-items: center;
   color: white;
   cursor: default;
+
   #navbar-left {
     width: 33vw;
     margin: 10px;
@@ -495,6 +512,27 @@ main {
       &:hover #volume-set {
         background-color: $primary;
       }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  #navbar-bottom {
+    flex-direction: column;
+    height: 130px;
+    #navbar-left {
+      margin: 0;
+      margin-block: 10px;
+      width: 90vw;
+    }
+    #navbar-center {
+      position: relative;
+      bottom: 30px;
+      .trackbar {
+        width: 90vw;
+      }
+    }
+    #navbar-right {
+      display: none;
     }
   }
 }

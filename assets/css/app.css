@@ -10,6 +10,7 @@
 
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  overflow: hidden;
 }
 
 .homepage_container {
@@ -19,7 +20,6 @@ body {
 #sidebar-left {
   cursor: default;
   width: 20vw;
-  height: 100vh;
   border: 1px solid black;
   padding: 10px;
   padding-left: 1.5em;
@@ -89,6 +89,21 @@ main {
   width: 60vw;
   height: 100vh;
   color: white;
+  padding: 1em 30px;
+  overflow-y: scroll;
+}
+main::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+main::-webkit-scrollbar-track {
+  background: black;
+}
+main::-webkit-scrollbar-thumb {
+  background: #888;
+}
+main::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 main #main-utente {
   display: flex;
@@ -144,12 +159,107 @@ main #main-utente .developers .user {
     display: none;
   }
 }
+main #albums-ads {
+  border: 0px solid black;
+  display: flex;
+  padding: 20px;
+  background: linear-gradient(20deg, rgb(0, 0, 0) 39%, rgb(50, 50, 51) 98%);
+  border-radius: 5px;
+}
+main #albums-ads img {
+  border-radius: 5px;
+  width: 200px;
+}
+main #albums-ads .colum {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  font-size: 1.8rem;
+}
+main #albums-ads #title-song {
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+main #albums-ads .button {
+  border-radius: 40px;
+  padding: 20px;
+  margin-top: 15px;
+  width: 120px;
+  background: #1ED760;
+  font-weight: bold;
+}
+main #albums-ads .button-2 {
+  border-radius: 40px;
+  padding: 20px;
+  margin-top: 15px;
+  width: 120px;
+  background: black;
+  color: white;
+  border: 0.5px solid grey;
+  font-weight: bold;
+}
+main #albums-ads .button-3 {
+  background: rgb(50, 50, 51);
+  color: grey;
+  border-radius: 10px;
+  border: 0px;
+  padding: 5px;
+  justify-content: flex-end;
+  font-weight: bold;
+}
+main #albums-ads #btn-container {
+  margin-left: auto;
+}
+main #albums-ads p {
+  font-size: 16px;
+}
+main #albums-ads i {
+  margin: 20px;
+  color: grey;
+}
+main #albums-favorites #albums-favorites_title {
+  margin-block: 0.9em;
+}
+main #albums-favorites .row {
+  display: flex;
+  justify-content: space-between;
+}
+main #albums-favorites .album-favorite {
+  height: 80px;
+  width: 32%;
+  margin-bottom: 1em;
+  color: white;
+  background-color: grey;
+  border-radius: 3px;
+  overflow: hidden;
+}
+main #albums-favorites .favorite_img-container {
+  width: 80px;
+  height: 100%;
+  background-color: white;
+}
+main #albums-favorites .favorite_img-container img {
+  width: 100%;
+  height: 100%;
+}
+main #albums-favorites #img_collection {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+main #albums-favorites #img_collection div {
+  color: black;
+  width: 50%;
+  height: 50%;
+  padding: 5px 0 0 5px;
+}
 main .album-title-recommended {
   padding-block: 20px;
   font-size: 22px;
 }
 main #albums-recommended {
   display: flex;
+  margin-bottom: 100vh;
   cursor: pointer;
 }
 main #albums-recommended img {
@@ -176,64 +286,6 @@ main #albums-recommended .album-recommended #author {
 main #albums-recommended .album-recommended:hover {
   background-color: #2C2C2C;
   transition: 0.5s;
-}
-
-main #albums-ads {
-  border: 0px solid black;
-  display: flex;
-  padding: 20px;
-  background: linear-gradient(20deg, rgb(0, 0, 0) 39%, rgb(50, 50, 51) 98%);
-  border-radius: 5px;
-}
-main #albums-ads img {
-  border-radius: 5px;
-  width: 200px;
-}
-main #albums-ads .colum {
-  padding-bottom: 20px;
-  padding-left: 20px;
-  font-size: 1.8rem;
-}
-main #albums-ads #title-song {
-  font-weight: 600;
-  letter-spacing: 3px;
-}
-main #albums-ads .button {
-  border-radius: 40px;
-  padding: 20px;
-  margin-top: 15px;
-  width: 5vw;
-  background: #1ED760;
-  font-weight: bold;
-}
-main #albums-ads .button-2 {
-  border-radius: 40px;
-  padding: 20px;
-  margin-top: 15px;
-  width: 5vw;
-  background: black;
-  color: white;
-  border: 0.5px solid grey;
-  font-weight: bold;
-}
-main #albums-ads .button-3 {
-  background: rgb(50, 50, 51);
-  color: grey;
-  border-radius: 10px;
-  border: 0px;
-  padding: 5px;
-  justify-content: flex-end;
-  font-weight: bold;
-}
-main #albums-ads #btn-container {
-  margin-left: auto;
-}
-main #albums-ads p {
-  font-size: 16px;
-}
-main #albums-ads i {
-  margin: 20px;
-  color: grey;
 }
 
 #sidebar-right {
@@ -458,6 +510,27 @@ main #albums-ads i {
   background-color: #1ED760;
 }
 
+@media screen and (max-width: 500px) {
+  #navbar-bottom {
+    flex-direction: column;
+    height: 130px;
+  }
+  #navbar-bottom #navbar-left {
+    margin: 0;
+    margin-block: 10px;
+    width: 90vw;
+  }
+  #navbar-bottom #navbar-center {
+    position: relative;
+    bottom: 30px;
+  }
+  #navbar-bottom #navbar-center .trackbar {
+    width: 90vw;
+  }
+  #navbar-bottom #navbar-right {
+    display: none;
+  }
+}
 @media screen and (max-width: 800px) {
   #sidebar-left {
     display: none;
