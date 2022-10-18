@@ -17,37 +17,52 @@ body {
 }
 
 #sidebar-left {
+  cursor: default;
   width: 20vw;
+  height: 100vh;
   border: 1px solid black;
   padding: 10px;
+  padding-left: 1.5em;
   background-color: black;
 }
 #sidebar-left h3 {
-  color: white;
-  font-size: 17px;
+  color: lightgray;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 #sidebar-left h3 i {
+  font-size: 1.3rem;
   margin-right: 10px;
 }
 #sidebar-left p {
+  color: gray;
+  font-size: 15px;
+  padding-top: 13px;
+}
+#sidebar-left p:hover {
   color: white;
 }
 #sidebar-left a {
-  color: white;
+  color: lightgray;
   text-decoration: none;
+}
+#sidebar-left a:hover {
+  color: white;
 }
 #sidebar-left hr {
   opacity: 0.2;
 }
 #sidebar-left .scrollbar {
   overflow-y: scroll;
-  height: 550px;
+  height: 70vh;
 }
 #sidebar-left ::-webkit-scrollbar {
   width: 10px;
+  height: 5px;
 }
 #sidebar-left ::-webkit-scrollbar-track {
-  background: #212121;
+  background: black;
 }
 #sidebar-left ::-webkit-scrollbar-thumb {
   background: #888;
@@ -57,7 +72,9 @@ body {
 }
 #sidebar-left .dots {
   margin-bottom: 5px;
-  color: white;
+  color: lightgray;
+  font-size: 1.7rem;
+  font-weight: 100;
 }
 #sidebar-left .bi-bookmark-heart-fill {
   color: rgb(124, 124, 167);
@@ -70,6 +87,7 @@ main {
   background: linear-gradient(0deg, #101010, #212121);
   width: 60vw;
   height: 100vh;
+  color: white;
 }
 
 #sidebar-right {
