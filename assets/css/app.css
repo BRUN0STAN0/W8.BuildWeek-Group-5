@@ -166,6 +166,13 @@ main #albums-ads {
   background: linear-gradient(20deg, rgb(0, 0, 0) 39%, rgb(50, 50, 51) 98%);
   border-radius: 5px;
 }
+@media screen and (max-width: 600px) {
+  main #albums-ads {
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+  }
+}
 main #albums-ads img {
   border-radius: 5px;
   width: 200px;
@@ -237,6 +244,11 @@ main #albums-favorites .row {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 700px) {
+  main #albums-favorites .row {
+    flex-direction: column;
+  }
+}
 main #albums-favorites .album-favorite {
   height: 80px;
   width: 32%;
@@ -245,6 +257,11 @@ main #albums-favorites .album-favorite {
   background-color: grey;
   border-radius: 3px;
   overflow: hidden;
+}
+@media screen and (max-width: 700px) {
+  main #albums-favorites .album-favorite {
+    width: 100%;
+  }
 }
 main #albums-favorites .favorite_img-container {
   width: 80px;
