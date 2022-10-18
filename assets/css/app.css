@@ -15,9 +15,6 @@ body {
 .homepage_container {
   display: flex;
 }
-.homepage_container main {
-  width: 60vw;
-}
 
 #sidebar-left {
   width: 20vw;
@@ -67,6 +64,12 @@ body {
 }
 #sidebar-left .bi-journal-bookmark-fill {
   color: green;
+}
+
+main {
+  background: linear-gradient(0deg, #101010, #212121);
+  width: 60vw;
+  height: 100vh;
 }
 
 #sidebar-right {

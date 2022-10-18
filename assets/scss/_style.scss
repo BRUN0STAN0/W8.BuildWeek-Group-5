@@ -1,5 +1,4 @@
 // * START GENERAL SETTINGS -->
-@import "mixins";
 
 *,
 *::after,
@@ -16,10 +15,6 @@ body {
 
 .homepage_container {
   display: flex;
-
-  main {
-    width: 60vw;
-  }
 }
 
 // * START SIDEBAR-LEFT [ANTONINO] -->
@@ -73,23 +68,29 @@ body {
     color: green;
   }
 }
+// * START MAIN
+main {
+  background: linear-gradient(0deg, #101010, #212121);
+  width: 60vw;
+  height: 100vh;
 
-// ! END SIDEBAR-LEFT [ANTONINO] -->
+  // ! END SIDEBAR-LEFT [ANTONINO] -->
 
-// * START ALBUM ADS [ANTONINO] -->
+  // * START ALBUM ADS [ANTONINO] -->
 
-// ! END ALBUM ADS [ANTONINO] -->
+  // ! END ALBUM ADS [ANTONINO] -->
 
-//  * START ALBUM FAVORITES [ROBERTO] -->
+  //  * START ALBUM FAVORITES [ROBERTO] -->
 
-// ! END ALBUM FAVORITES [ROBERTO] -->
+  // ! END ALBUM FAVORITES [ROBERTO] -->
 
-// * START ALBUM RECOMMENDED [BRUNO] -->
+  // * START ALBUM RECOMMENDED [BRUNO] -->
 
-// ! END ALBUM RECOMMENDED [BRUNO] -->
+  // ! END ALBUM RECOMMENDED [BRUNO] -->
 
-// * START SIDEBAR-RIGHT [ROBERTO] -->
-
+  // * START SIDEBAR-RIGHT [ROBERTO] -->
+}
+// ! END MAIN
 #sidebar-right {
   width: 20vw;
 
