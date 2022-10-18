@@ -10,6 +10,7 @@
 
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
 }
 // ! END GENERAL SETTINGS -->
 
@@ -21,7 +22,7 @@ body {
 #sidebar-left {
   cursor: default;
   width: 20vw;
-  height: 100vh;
+  // height: 100vh;
   border: 1px solid black;
   padding: 10px;
   padding-left: 1.5em;
@@ -92,6 +93,7 @@ main {
   width: 60vw;
   height: 100vh;
   color: white;
+  padding: 1em 30px;
   // ! END SIDEBAR-LEFT [ANTONINO] -->
   // * START MAIN UTENTE [BRUNO]
   #main-utente {
@@ -172,7 +174,7 @@ main {
     border-radius: 40px;
     padding: 20px;
     margin-top: 15px;
-    width: 5vw;
+    width: 120px;
     background: $primary;
     font-weight: bold;
   }
@@ -180,7 +182,7 @@ main {
     border-radius: 40px;
     padding: 20px;
     margin-top: 15px;
-    width: 5vw;
+    width: 120px;
     background: black;
     color:white;
     border: 0.5px solid grey;
@@ -210,6 +212,48 @@ main {
   // ! END ALBUM ADS [ANTONINO] -->
 
   //  * START ALBUM FAVORITES [ROBERTO] -->
+
+  #albums-favorites {
+    #albums-favorites_title {
+      margin-block: 0.9em;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .album-favorite {
+      height: 80px;
+      width: 32%;
+      margin-bottom: 1em;
+      color: white;
+      background-color: grey;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .favorite_img-container {
+      width: 80px;
+      height: 100%;
+      background-color: white;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    #img_collection {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      div {
+        color: black;
+        width: 50%;
+        height: 50%;
+        padding: 5px 0 0 5px;
+      }
+    }
+  }
 
   // ! END ALBUM FAVORITES [ROBERTO] -->
 
