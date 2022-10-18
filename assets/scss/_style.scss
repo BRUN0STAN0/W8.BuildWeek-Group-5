@@ -94,7 +94,56 @@ main {
   color: white;
 
   // ! END SIDEBAR-LEFT [ANTONINO] -->
+  // * START MAIN UTENTE [BRUNO]
+  #main-utente {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
 
+    .fa-chevron-left {
+      background-color: #101010;
+      padding: 10px;
+      border-radius: 50px;
+      margin-left: 30px;
+      cursor: pointer;
+    }
+    .fa-chevron-right {
+      background-color: #101010;
+      padding: 10px;
+      border-radius: 50px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .upgrade {
+      border: 1px solid gray;
+      border-radius: 20px;
+      padding: 5px;
+      padding-inline: 12px;
+      font-size: 13px;
+      font-weight: 900;
+      font-style: normal;
+      cursor: default;
+      &:hover {
+        background-color: black;
+        border: 2px solid white;
+      }
+    }
+    .developers {
+      cursor: default;
+      font-style: normal;
+      background-color: black;
+      border-radius: 30px;
+      padding-block: 7px;
+      padding-inline: 3px;
+      padding-right: 10px;
+      .bi-person {
+        background-color: gray;
+        border-radius: 500px;
+        padding: 5px;
+      }
+    }
+  }
+  // ! END MAIN UTENTE [BRUNO]
   // * START ALBUM ADS [ANTONINO] -->
 
   // ! END ALBUM ADS [ANTONINO] -->
@@ -104,6 +153,39 @@ main {
   // ! END ALBUM FAVORITES [ROBERTO] -->
 
   // * START ALBUM RECOMMENDED [BRUNO] -->
+  .album-title-recommended {
+    padding-block: 20px;
+    font-size: 22px;
+  }
+  #albums-recommended {
+    display: flex;
+    cursor: pointer;
+    img {
+      border-radius: 5px;
+      width: 160px;
+      height: 160px;
+    }
+    .album-recommended {
+      background-color: #1d1d1d;
+      padding: 15px;
+      border-radius: 10px;
+      margin-right: 32px;
+      #title-song {
+        padding-block: 10px;
+        font-weight: 900;
+        font-size: 14px;
+      }
+      #author {
+        padding-block: 5px;
+        color: gray;
+        font-size: 14px;
+      }
+      &:hover {
+        background-color: $bg-dark-light;
+        transition: 0.5s;
+      }
+    }
+  }
 
   // ! END ALBUM RECOMMENDED [BRUNO] -->
 
@@ -307,8 +389,6 @@ main {
   }
 }
 // ! END NAVBAR BOTTOM [BRUNO] -->
-
-
 
 @media screen and (max-width: 800px) {
   #sidebar-left {

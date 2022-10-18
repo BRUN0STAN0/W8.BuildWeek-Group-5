@@ -90,6 +90,86 @@ main {
   height: 100vh;
   color: white;
 }
+main #main-utente {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+main #main-utente .fa-chevron-left {
+  background-color: #101010;
+  padding: 10px;
+  border-radius: 50px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+main #main-utente .fa-chevron-right {
+  background-color: #101010;
+  padding: 10px;
+  border-radius: 50px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+main #main-utente .upgrade {
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 5px;
+  padding-inline: 12px;
+  font-size: 13px;
+  font-weight: 900;
+  font-style: normal;
+  cursor: default;
+}
+main #main-utente .upgrade:hover {
+  background-color: black;
+  border: 2px solid white;
+}
+main #main-utente .developers {
+  cursor: default;
+  font-style: normal;
+  background-color: black;
+  border-radius: 30px;
+  padding-block: 7px;
+  padding-inline: 3px;
+  padding-right: 10px;
+}
+main #main-utente .developers .bi-person {
+  background-color: gray;
+  border-radius: 500px;
+  padding: 5px;
+}
+main .album-title-recommended {
+  padding-block: 20px;
+  font-size: 22px;
+}
+main #albums-recommended {
+  display: flex;
+  cursor: pointer;
+}
+main #albums-recommended img {
+  border-radius: 5px;
+  width: 160px;
+  height: 160px;
+}
+main #albums-recommended .album-recommended {
+  background-color: #1d1d1d;
+  padding: 15px;
+  border-radius: 10px;
+  margin-right: 32px;
+}
+main #albums-recommended .album-recommended #title-song {
+  padding-block: 10px;
+  font-weight: 900;
+  font-size: 14px;
+}
+main #albums-recommended .album-recommended #author {
+  padding-block: 5px;
+  color: gray;
+  font-size: 14px;
+}
+main #albums-recommended .album-recommended:hover {
+  background-color: #2C2C2C;
+  transition: 0.5s;
+}
 
 #sidebar-right {
   width: 20vw;
