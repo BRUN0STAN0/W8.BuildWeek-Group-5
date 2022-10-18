@@ -1,7 +1,34 @@
+window.onload = () => {
+  loadJSON();
+};
+
 async function loadJSON() {
-  let musicResponse = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${inputSearch.value}`);
+  let musicResponse = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=Nicola`);
   let musicObject = await musicResponse.json();
   let musicArray = musicObject.data;
+  iterateArray(musicArray);
+}
+
+function iterateArray(musicArray) {
+  let previewImg = document.querySelectorAll("#preview-img");
+  let title = document.querySelectorAll("#title-song");
+  let author = document.querySelectorAll("#author");
+  for (let a of author) {
+    for (let t of title) {
+      for (let preview of previewImg) {
+        for (let m of musicArray) {
+          t.innerHTML = m.title_short;
+          a.innerHTML = m.artist.name;
+          preview.src = m.album.cover;
+        }
+      }
+    }
+  }
+  selectSong(title[0]);
+}
+
+function selectSong(eventClick) {
+  console.log(eventClick);
 }
 
 // * START TRACKBAR
@@ -10,19 +37,23 @@ let timer = 0;
 let timer2 = 100;
 let pause = document.getElementById("pause");
 let play = document.getElementById("play");
+let playAds = document.getElementById("play-ads");
 let isPlay = false;
 let seconds = 0;
 let minutes = 0;
 let trackSeconds = document.getElementById("track-seconds");
 let trackDefault = document.getElementsByClassName("track-default")[0];
 
-play.addEventListener("click", () => {
+playAds.addEventListener("click", playFunction);
+play.addEventListener("click", playFunction);
+
+function playFunction() {
   isPlay = true;
   play.style.display = "none";
   pause.style.display = "inline";
   pauseTrackBarSeconds();
   pauseSeconds();
-});
+}
 
 pause.addEventListener("click", () => {
   isPlay = false;

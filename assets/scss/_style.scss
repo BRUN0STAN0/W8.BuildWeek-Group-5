@@ -175,6 +175,7 @@ main {
     img {
       border-radius: 5px;
       width: 200px;
+      height: 200px;
     }
     .colum {
       padding-bottom: 20px;
@@ -183,7 +184,11 @@ main {
     }
     #title-song {
       font-weight: 600;
-      letter-spacing: 3px;
+      letter-spacing: -3px;
+      @media screen and (max-width: 1000px) {
+        font-size: 30px;
+        letter-spacing: 0;
+      }
     }
     .button {
       border-radius: 40px;
@@ -211,6 +216,9 @@ main {
       padding: 5px;
       justify-content: flex-end;
       font-weight: bold;
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
     }
     #btn-container {
       margin-left: auto;
@@ -231,6 +239,8 @@ main {
   #albums-favorites {
     #albums-favorites_title {
       margin-block: 0.9em;
+      font-size: 22px;
+      font-weight: 900;
     }
 
     .row {

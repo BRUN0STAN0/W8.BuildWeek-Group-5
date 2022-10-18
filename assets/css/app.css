@@ -169,6 +169,7 @@ main #albums-ads {
 main #albums-ads img {
   border-radius: 5px;
   width: 200px;
+  height: 200px;
 }
 main #albums-ads .colum {
   padding-bottom: 20px;
@@ -177,7 +178,13 @@ main #albums-ads .colum {
 }
 main #albums-ads #title-song {
   font-weight: 600;
-  letter-spacing: 3px;
+  letter-spacing: -3px;
+}
+@media screen and (max-width: 1000px) {
+  main #albums-ads #title-song {
+    font-size: 30px;
+    letter-spacing: 0;
+  }
 }
 main #albums-ads .button {
   border-radius: 40px;
@@ -206,6 +213,11 @@ main #albums-ads .button-3 {
   justify-content: flex-end;
   font-weight: bold;
 }
+@media screen and (max-width: 1000px) {
+  main #albums-ads .button-3 {
+    display: none;
+  }
+}
 main #albums-ads #btn-container {
   margin-left: auto;
 }
@@ -218,6 +230,8 @@ main #albums-ads i {
 }
 main #albums-favorites #albums-favorites_title {
   margin-block: 0.9em;
+  font-size: 22px;
+  font-weight: 900;
 }
 main #albums-favorites .row {
   display: flex;
