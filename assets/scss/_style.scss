@@ -104,6 +104,13 @@ body {
           font-size: 0.8rem;
         }
       }
+      #visualize-other {
+        font-size: 0.6rem;
+        color: gray;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-top: 2em;
+      }
     }
 
     #liked {
@@ -122,7 +129,7 @@ body {
         font-size: 0.8rem;
       p:nth-child(2){
         font-size: 0.6rem;
-        color: lightgrey;
+        color: grey;
       }
       }
 
