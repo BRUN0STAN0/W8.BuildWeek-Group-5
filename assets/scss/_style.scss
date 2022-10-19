@@ -352,6 +352,24 @@ main {
 // * START MAIN2 PAGINA 2 [ANTONINO] -->
 #main-pagina-2{
   background: linear-gradient(180deg, rgba(183,158,65,1) 0%, rgba(14,13,13,1) 45%);
+  
+    overflow-y: scroll;
+    height: 99vh;
+    padding-bottom: 50vh;
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
   .upgrade-2 {
     background: black;
     color:white;
@@ -373,6 +391,69 @@ main {
     padding: 5px;
     margin-top: 30px;
   }
+  .colum-2 {
+    padding-top:20px;
+    padding-left: 20px;
+    font-size: 1.8rem;
+  }
+  h1{
+    font-size: 5rem;
+    font-weight: bold;
+  }
+  p{
+    font-size: 0.8rem;
+    padding-top: 20px;
+  }
+  .box{
+    border: 0px solid black;
+    margin-top:30px;
+    
+  }
+  #play2{
+    font-size: 3.5rem;
+    color:$primary;
+  }
+  .bi-heart{
+    font-size:2.2rem;
+    color:grey;
+    margin-left:20px;
+  }
+  .bi-arrow-down-circle{
+    font-size:2rem;
+    color:grey;
+    margin-left:20px;
+  }
+  .bi-three-dots{
+    font-size:2rem;
+    color:grey;
+    margin-left:20px;
+  }
+  table{
+    width:100%;
+    margin:10px;
+    color:grey;
+  }
+  .th{
+    width: 10%;
+  }
+  ol{
+    list-style:decimal;
+    width:100%;
+    #titolo{
+      display:inline-block;
+      width: 45%;
+    }
+     li{
+      width:100%;
+       p{
+        display: inline-block;
+       }
+       #ascolti{
+        margin-right:400px;
+       }
+     }
+  }
+  
 }
 // ! END MAIN2 PAGINA 2 [ANTONINO] -->
 

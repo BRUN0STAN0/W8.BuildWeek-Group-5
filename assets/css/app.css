@@ -332,6 +332,22 @@ main #albums-recommended .album-recommended:hover {
 
 #main-pagina-2 {
   background: linear-gradient(180deg, rgb(183, 158, 65) 0%, rgb(14, 13, 13) 45%);
+  overflow-y: scroll;
+  height: 99vh;
+  padding-bottom: 50vh;
+}
+#main-pagina-2 ::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+#main-pagina-2 ::-webkit-scrollbar-track {
+  background: black;
+}
+#main-pagina-2 ::-webkit-scrollbar-thumb {
+  background: #888;
+}
+#main-pagina-2 ::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 #main-pagina-2 .upgrade-2 {
   background: black;
@@ -353,6 +369,67 @@ main #albums-recommended .album-recommended:hover {
   display: flex;
   padding: 5px;
   margin-top: 30px;
+}
+#main-pagina-2 .colum-2 {
+  padding-top: 20px;
+  padding-left: 20px;
+  font-size: 1.8rem;
+}
+#main-pagina-2 h1 {
+  font-size: 5rem;
+  font-weight: bold;
+}
+#main-pagina-2 p {
+  font-size: 0.8rem;
+  padding-top: 20px;
+}
+#main-pagina-2 .box {
+  border: 0px solid black;
+  margin-top: 30px;
+}
+#main-pagina-2 #play2 {
+  font-size: 3.5rem;
+  color: #1ED760;
+}
+#main-pagina-2 .bi-heart {
+  font-size: 2.2rem;
+  color: grey;
+  margin-left: 20px;
+}
+#main-pagina-2 .bi-arrow-down-circle {
+  font-size: 2rem;
+  color: grey;
+  margin-left: 20px;
+}
+#main-pagina-2 .bi-three-dots {
+  font-size: 2rem;
+  color: grey;
+  margin-left: 20px;
+}
+#main-pagina-2 table {
+  width: 100%;
+  margin: 10px;
+  color: grey;
+}
+#main-pagina-2 .th {
+  width: 10%;
+}
+#main-pagina-2 ol {
+  list-style: decimal;
+  width: 100%;
+}
+#main-pagina-2 ol #titolo {
+  display: inline-block;
+  width: 45%;
+}
+#main-pagina-2 ol li {
+  width: 100%;
+}
+#main-pagina-2 ol li p {
+  display: inline-block;
+}
+#main-pagina-2 ol li #ascolti {
+  margin-right: 400px;
 }
 
 #sidebar-right {
