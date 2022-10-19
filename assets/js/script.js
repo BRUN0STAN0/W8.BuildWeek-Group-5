@@ -1,8 +1,11 @@
 let previewImg = document.querySelectorAll("#preview-img");
 let audio;
-
-let buonasalvePlaylist = ["ads", "Summer", "Monday", "Best", "Life", "Rock", "Cipoll"];
+let titles = document.querySelectorAll("#title-song");
+let authors = document.querySelectorAll("#author");
+let buonasalvePlaylist = ["ads", "Monday", "Left", "Right", "Up", "Best", "Life", "ciia", "Summer", "Cipolli", "ludovico", "giuliano", "Motivation", "ciao", "Kill", "We", "Possiamo"];
 let buonasalvePlaylistFETCH = [];
+let navbarLeft = document.getElementById("navbar-left");
+let navbarRight = document.getElementById("navbar-right");
 window.onload = () => {
   loadJSON();
 };
@@ -17,36 +20,25 @@ async function loadJSON() {
   }
   iterateArray(buonasalvePlaylistFETCH);
 }
-let buonasalveMp3Array = [];
-let buonasalvePreviewArray = [];
-let buonasalveTitleArray = [];
-let buonasalveAuthorArray = [];
 
 function iterateArray(musicArray) {
   // * START CICLO PER LINKARE L'AUDIO
   for (let preview of previewImg) {
-    preview.addEventListener("click", playFunction);
     let p = document.createElement("p");
     p.classList.add("link-mp3");
-    for (let m of musicArray) {
-      p.innerHTML = m.preview;
-    }
     preview.parentElement.appendChild(p);
   }
+  let par = document.querySelectorAll(".link-mp3");
+  for (let i = 0; i < 7; i++) {
+    par[i].innerHTML = musicArray[i].preview;
+  }
   // ! END CICLO PER LINKARE L'AUDIO
-  let title = document.querySelectorAll("#title-song");
-  let author = document.querySelectorAll("#author");
-  for (let m of musicArray) {
-    // sectionMusicArray.push(m.)
-    for (let a of author) {
-      a.innerHTML = m.artist.name;
-    }
-    for (let t of title) {
-      t.innerHTML = m.title_short;
-    }
-    for (let preview of previewImg) {
-      preview.src = m.album.cover;
-    }
+  for (let i = 0; i < 16; i++) {
+    previewImg[i].src = musicArray[i].album.cover;
+  }
+  for (let i = 0; i < 7; i++) {
+    authors[i].innerHTML = musicArray[i].artist.name;
+    titles[i].innerHTML = musicArray[i].title_short;
   }
 }
 
@@ -64,7 +56,7 @@ let trackSeconds = document.getElementById("track-seconds");
 let trackDefault = document.getElementsByClassName("track-default")[0];
 
 playAds.addEventListener("click", playFunction);
-play.addEventListener("click", playFunction);
+play.addEventListener("click", playFunctionNavbar);
 pause.addEventListener("click", pauseFunction);
 
 function playFunction() {
@@ -72,11 +64,29 @@ function playFunction() {
     pauseFunction();
     resetTrackBarSeconds();
   }
+
+  navbarLeft.style.opacity = 1;
+  navbarRight.style.opacity = 1;
   play.style.display = "none";
   pause.style.display = "inline";
   pauseTrackBarSeconds();
   pauseSeconds();
   selectSongPlay(previewImg);
+  isPlay = true;
+}
+
+function playFunctionNavbar() {
+  if (isPlay) {
+    pauseFunction();
+    resetTrackBarSeconds();
+  }
+  navbarLeft.style.opacity = 1;
+  navbarRight.style.opacity = 1;
+  play.style.display = "none";
+  pause.style.display = "inline";
+  pauseTrackBarSeconds();
+  pauseSeconds();
+  audio.play();
   isPlay = true;
 }
 
@@ -90,6 +100,11 @@ function pauseFunction() {
 }
 
 function selectSongPlay(eventClick) {
+  console.log(eventClick[0].parentElement);
+
+  previewImg[previewImg.length - 1].src = buonasalvePlaylistFETCH[0].album.cover;
+  titles[titles.length - 1].innerHTML = buonasalvePlaylistFETCH[0].title_short;
+  authors[authors.length - 1].innerHTML = buonasalvePlaylistFETCH[0].artist.name;
   let linkMp3 = eventClick[0].parentElement.children[3].innerHTML;
   audio = new Audio(linkMp3);
   audio.play();
@@ -115,7 +130,7 @@ function resetTrackBarSeconds() {
   seconds = 0;
   minutes = 0;
 }
-const intervalTrackBarSeconds = setInterval(startTrackBarSeconds, 1000);
+const intervalTrackBarSeconds = setInterval(startTrackBarSeconds, 300);
 
 function pauseTrackBarSeconds() {
   clearInterval(startTrackBarSeconds);
@@ -125,12 +140,19 @@ function startSeconds() {
   let currentSeconds = document.getElementById("current-seconds");
   currentSeconds.innerHTML = `${minutes}.${seconds}`;
   if (isPlay) {
-    if (seconds === 59) {
-      seconds = 0;
-      minutes++;
-    }
-    if (minutes == 2) {
+    // if (seconds === 59) {
+    //   seconds = 0;
+    //   minutes++;
+    // }
+    // if (minutes == 2) {
+    //   pauseTrackBarSeconds();
+    // }
+
+    if (seconds == 30) {
       pauseTrackBarSeconds();
+      resetTrackBarSeconds();
+      seconds = 0;
+      isPlay = false;
     }
     seconds++;
   }

@@ -473,6 +473,7 @@ main #albums-recommended .album-recommended:hover {
   cursor: default;
 }
 #navbar-bottom #navbar-left {
+  opacity: 0;
   width: 33vw;
   margin: 10px;
   display: flex;
@@ -555,6 +556,7 @@ main #albums-recommended .album-recommended:hover {
   align-items: center;
   justify-content: end;
   color: gray;
+  opacity: 0;
 }
 #navbar-bottom #navbar-right i {
   padding-right: 20px;
