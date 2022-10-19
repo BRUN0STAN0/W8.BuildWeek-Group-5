@@ -18,6 +18,126 @@ body {
   display: flex;
 }
 
+.artistPage_container {
+  display: flex;
+  main {
+    padding: 0;
+  }
+
+   #buttons_row {
+    display: flex;
+    gap: 1em;
+    margin-left: 30px;
+    margin-top: 1em;
+    align-items: center;
+
+    #play_btn {
+      background-color: $primary;
+      border: 0 solid;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      font-size: 1.8rem;
+      padding-top: 3px;
+      padding-left: 3px;
+    }
+
+    #follow_btn {
+      border: 1px solid lightgrey;
+      border-radius: 2px;
+      background-color: rgba(50, 50, 51, 0);
+      height: 20px;
+      padding-inline: 10px;
+      color: lightgrey;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+
+    #other_btn {
+      display: inline-block;
+      font-weight: 200;
+      font-size: 1.5rem;
+      
+    }
+   }
+   .header_artistPage {
+    height: 20vw;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    #verified {
+      font-size: 0.8rem;
+      i{
+        color: $secondary;
+      }
+    }
+    #listeners {
+      font-size: 0.8rem;
+    }
+    #header_title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+    }
+  }
+  #artist_content {
+    display: flex;
+    #popular {
+      width: 60%;
+      padding-left: 30px;
+      margin-top: 1em;
+      p {
+        margin-bottom: 1em;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      ul {
+        list-style: none;
+        li {
+          margin-left: 1em;
+          margin-bottom: 0.8em;
+          font-size: 0.8rem;
+        }
+      }
+      #visualize-other {
+        font-size: 0.6rem;
+        color: gray;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-top: 2em;
+      }
+    }
+
+    #liked {
+      width: 40%;
+      padding-right: 30px;
+      padding-top: 1em;
+      >p{
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 1em;
+      }
+      #detail {
+        display: flex;
+
+      #detail-text {
+        font-size: 0.8rem;
+      p:nth-child(2){
+        font-size: 0.6rem;
+        color: grey;
+      }
+      }
+
+      }
+    }
+  }
+}
+
 // * START SIDEBAR-LEFT [ANTONINO] -->
 #sidebar-left {
   cursor: default;
@@ -274,7 +394,7 @@ main {
       margin-bottom: 1em;
       padding-right: 0.8em;
       color: white;
-      background-color: grey;
+      background-color: $bg-dark-light;
       border-radius: 3px;
       overflow: hidden;
       display: flex;
@@ -367,7 +487,7 @@ main {
 
   // ! END ALBUM RECOMMENDED [BRUNO] -->
 
-  // * START SIDEBAR-RIGHT [ROBERTO] -->
+  
 }
 // ! END MAIN
 
@@ -398,6 +518,7 @@ main {
 }
 // ! END MAIN2 PAGINA 2 [ANTONINO] -->
 
+// * START SIDEBAR-RIGHT [ROBERTO] -->
 #sidebar-right {
   width: 20vw;
 
