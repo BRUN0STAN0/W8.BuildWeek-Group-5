@@ -330,6 +330,31 @@ main #albums-recommended .album-recommended:hover {
   transition: 0.5s;
 }
 
+#main-pagina-2 {
+  background: linear-gradient(180deg, rgb(183, 158, 65) 0%, rgb(14, 13, 13) 45%);
+}
+#main-pagina-2 .upgrade-2 {
+  background: black;
+  color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 5px;
+  padding-inline: 12px;
+  font-size: 13px;
+  font-weight: 900;
+  font-style: normal;
+  cursor: default;
+}
+#main-pagina-2 .upgrade-2:hover {
+  background-color: black;
+  border: 2px solid white;
+}
+#main-pagina-2 #album-2 {
+  display: flex;
+  padding: 5px;
+  margin-top: 30px;
+}
+
 #sidebar-right {
   width: 20vw;
 }

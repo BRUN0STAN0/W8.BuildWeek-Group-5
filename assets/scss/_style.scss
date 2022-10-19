@@ -238,7 +238,6 @@ main {
       color: grey;
     }
   }
-
   // ! END ALBUM ADS [ANTONINO] -->
 
   //  * START ALBUM FAVORITES [ROBERTO] -->
@@ -348,6 +347,36 @@ main {
   // * START SIDEBAR-RIGHT [ROBERTO] -->
 }
 // ! END MAIN
+
+
+// * START MAIN2 PAGINA 2 [ANTONINO] -->
+#main-pagina-2{
+  background: linear-gradient(180deg, rgba(183,158,65,1) 0%, rgba(14,13,13,1) 45%);
+  .upgrade-2 {
+    background: black;
+    color:white;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+    padding-inline: 12px;
+    font-size: 13px;
+    font-weight: 900;
+    font-style: normal;
+    cursor: default;
+    &:hover {
+      background-color: black;
+      border: 2px solid white;
+    }
+  }
+  #album-2{
+    display: flex;
+    padding: 5px;
+    margin-top: 30px;
+  }
+}
+// ! END MAIN2 PAGINA 2 [ANTONINO] -->
+
+
 #sidebar-right {
   width: 20vw;
 
