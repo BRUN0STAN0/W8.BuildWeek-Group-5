@@ -1,16 +1,23 @@
 let previewImg = document.querySelectorAll("#preview-img");
 let audio;
 
+let buonasalvePlaylist = ["ads", "Summer", "Monday", "Best", "Life", "Rock", "Cipoll"];
+let buonasalvePlaylistFETCH = [];
 window.onload = () => {
   loadJSON();
 };
 
 async function loadJSON() {
-  let musicResponse = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=Nicola`);
-  let musicObject = await musicResponse.json();
-  let musicArray = musicObject.data;
-  iterateArray(musicArray);
+  for (let p of buonasalvePlaylist) {
+    let musicResponse = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${p}`);
+    let musicObject = await musicResponse.json();
+    let musicArray = musicObject.data;
+    let musicElement = musicArray[0];
+    buonasalvePlaylistFETCH.push(musicElement);
+  }
+  iterateArray(buonasalvePlaylistFETCH);
 }
+let sectionMusicArray = [];
 
 function iterateArray(musicArray) {
   // * START CICLO PER LINKARE L'AUDIO
@@ -26,15 +33,19 @@ function iterateArray(musicArray) {
   // ! END CICLO PER LINKARE L'AUDIO
   let title = document.querySelectorAll("#title-song");
   let author = document.querySelectorAll("#author");
-  for (let a of author) {
+  for (let i = 0; i < musicArray.length; i++) {
+    console.log(musicArray[i].preview);
+    sectionMusicArray.push(musicArray[i].preview);
+  }
+  for (let m of musicArray) {
+    for (let a of author) {
+      a.innerHTML = m.artist.name;
+    }
     for (let t of title) {
-      for (let preview of previewImg) {
-        for (let m of musicArray) {
-          t.innerHTML = m.title_short;
-          a.innerHTML = m.artist.name;
-          preview.src = m.album.cover;
-        }
-      }
+      t.innerHTML = m.title_short;
+    }
+    for (let preview of previewImg) {
+      preview.src = m.album.cover;
     }
   }
 }
