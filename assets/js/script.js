@@ -79,7 +79,6 @@ function pauseFunction() {
 }
 
 function selectSongPlay(eventClick) {
-  console.log(number);
   let linkMp3 = eventClick[0].parentElement.children[3].innerHTML;
   audio = new Audio(linkMp3);
   audio.play();
