@@ -253,20 +253,31 @@ main #albums-favorites .album-favorite {
   height: 80px;
   width: 32%;
   margin-bottom: 1em;
+  padding-right: 0.8em;
   color: white;
   background-color: grey;
   border-radius: 3px;
   overflow: hidden;
+  display: flex;
 }
 @media screen and (max-width: 700px) {
   main #albums-favorites .album-favorite {
     width: 100%;
   }
 }
+main #albums-favorites .favorite_text {
+  margin-left: 0.8em;
+  margin-top: 0.8em;
+}
+main #albums-favorites .favorite_text .title {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
 main #albums-favorites .favorite_img-container {
   width: 80px;
   height: 100%;
   background-color: white;
+  overflow: hidden;
 }
 main #albums-favorites .favorite_img-container img {
   width: 100%;
@@ -282,7 +293,6 @@ main #albums-favorites #img_collection div {
   color: black;
   width: 50%;
   height: 50%;
-  padding: 5px 0 0 5px;
 }
 main .album-title-recommended {
   padding-block: 20px;
@@ -360,6 +370,7 @@ main #albums-recommended .album-recommended:hover {
   background-image: url("../../img_assets/pexels-andrea-piacquadio-3760043.jpg");
   margin-left: 5px;
   width: 30px;
+  min-width: 30px;
   height: 30px;
   border-radius: 50%;
   margin-right: 1em;
@@ -379,6 +390,7 @@ main #albums-recommended .album-recommended:hover {
   background-image: url("../../img_assets/pexels-mart-production-8869292.jpg");
   margin-left: 5px;
   width: 30px;
+  min-width: 30px;
   height: 30px;
   border-radius: 50%;
   margin-right: 1em;
@@ -398,6 +410,7 @@ main #albums-recommended .album-recommended:hover {
   background-image: url("../../img_assets/pexels-анастасия-триббиани-9314632.jpg");
   margin-left: 5px;
   width: 30px;
+  min-width: 30px;
   height: 30px;
   border-radius: 50%;
   margin-right: 1em;
