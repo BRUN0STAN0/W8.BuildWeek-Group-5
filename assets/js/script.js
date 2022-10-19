@@ -100,8 +100,6 @@ function pauseFunction() {
 }
 
 function selectSongPlay(eventClick) {
-  console.log(eventClick[0].parentElement);
-
   previewImg[previewImg.length - 1].src = buonasalvePlaylistFETCH[0].album.cover;
   titles[titles.length - 1].innerHTML = buonasalvePlaylistFETCH[0].title_short;
   authors[authors.length - 1].innerHTML = buonasalvePlaylistFETCH[0].artist.name;
@@ -195,3 +193,17 @@ volumeSet.addEventListener("mousemove", function volumeSlide(event) {
 });
 
 // ! END VOLUME
+
+let albumsRecommended = document.getElementsByClassName("album-recommended");
+
+for (let recommended of albumsRecommended) {
+  recommended.addEventListener("click", funzioneACaso);
+}
+
+function funzioneACaso() {
+  document.location.href = "artist.html";
+  let headerTitleArtist = document.getElementById("header_title");
+
+  headerTitleArtist.innerHTML = buonasalvePlaylistFETCH[i].artist.name;
+  console.log(headerTitleArtist.innerHTML);
+}

@@ -17,6 +17,117 @@ body {
   display: flex;
 }
 
+.artistPage_container {
+  display: flex;
+}
+.artistPage_container main {
+  padding: 0;
+}
+.artistPage_container #buttons_row {
+  display: flex;
+  gap: 1em;
+  margin-left: 30px;
+  margin-top: 1em;
+  align-items: center;
+}
+.artistPage_container #buttons_row #play_btn {
+  background-color: #1ED760;
+  border: 0 solid;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 1.8rem;
+  padding-top: 3px;
+  padding-left: 3px;
+}
+.artistPage_container #buttons_row #follow_btn {
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  background-color: rgba(50, 50, 51, 0);
+  height: 20px;
+  padding-inline: 10px;
+  color: lightgrey;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.artistPage_container #buttons_row #other_btn {
+  display: inline-block;
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+.artistPage_container .header_artistPage {
+  height: 20vw;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  background-color: lightcoral;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.artistPage_container .header_artistPage #verified {
+  font-size: 0.8rem;
+}
+.artistPage_container .header_artistPage #verified i {
+  color: #2E77D0;
+}
+.artistPage_container .header_artistPage #listeners {
+  font-size: 0.8rem;
+}
+.artistPage_container .header_artistPage #header_title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+.artistPage_container #artist_content {
+  display: flex;
+}
+.artistPage_container #artist_content #popular {
+  width: 60%;
+  padding-left: 30px;
+  margin-top: 1em;
+}
+.artistPage_container #artist_content #popular p {
+  margin-bottom: 1em;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.artistPage_container #artist_content #popular ul {
+  list-style: none;
+}
+.artistPage_container #artist_content #popular ul li {
+  margin-left: 1em;
+  margin-bottom: 0.8em;
+  font-size: 0.8rem;
+}
+.artistPage_container #artist_content #popular #visualize-other {
+  font-size: 0.6rem;
+  color: gray;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 2em;
+}
+.artistPage_container #artist_content #liked {
+  width: 40%;
+  padding-right: 30px;
+  padding-top: 1em;
+}
+.artistPage_container #artist_content #liked > p {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+.artistPage_container #artist_content #liked #detail {
+  display: flex;
+}
+.artistPage_container #artist_content #liked #detail #detail-text {
+  font-size: 0.8rem;
+}
+.artistPage_container #artist_content #liked #detail #detail-text p:nth-child(2) {
+  font-size: 0.6rem;
+  color: grey;
+}
+
 #sidebar-left {
   cursor: default;
   width: 20vw;
@@ -266,7 +377,7 @@ main #albums-favorites .album-favorite {
   margin-bottom: 1em;
   padding-right: 0.8em;
   color: white;
-  background-color: grey;
+  background-color: #2C2C2C;
   border-radius: 3px;
   overflow: hidden;
   display: flex;
