@@ -17,7 +17,10 @@ async function loadJSON() {
   }
   iterateArray(buonasalvePlaylistFETCH);
 }
-let sectionMusicArray = [];
+let buonasalveMp3Array = [];
+let buonasalvePreviewArray = [];
+let buonasalveTitleArray = [];
+let buonasalveAuthorArray = [];
 
 function iterateArray(musicArray) {
   // * START CICLO PER LINKARE L'AUDIO
@@ -33,11 +36,8 @@ function iterateArray(musicArray) {
   // ! END CICLO PER LINKARE L'AUDIO
   let title = document.querySelectorAll("#title-song");
   let author = document.querySelectorAll("#author");
-  for (let i = 0; i < musicArray.length; i++) {
-    console.log(musicArray[i].preview);
-    sectionMusicArray.push(musicArray[i].preview);
-  }
   for (let m of musicArray) {
+    // sectionMusicArray.push(m.)
     for (let a of author) {
       a.innerHTML = m.artist.name;
     }
