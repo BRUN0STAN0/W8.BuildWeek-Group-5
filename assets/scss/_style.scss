@@ -191,10 +191,21 @@ main {
     #title-song {
       font-weight: 600;
       letter-spacing: -3px;
+
       @media screen and (max-width: 1000px) {
         font-size: 30px;
         letter-spacing: 0;
       }
+    }
+    a {
+      color: gray;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    #author {
+      color: gray;
     }
     .button {
       border-radius: 40px;
@@ -271,10 +282,14 @@ main {
         width: 100%;
       }
     }
-
+    a {
+      color: white;
+      text-decoration: none;
+    }
     .favorite_text {
       margin-left: 0.8em;
       margin-top: 0.8em;
+
       .title {
         font-size: 0.9rem;
         font-weight: 600;
@@ -314,13 +329,18 @@ main {
   #albums-recommended {
     display: flex;
     margin-bottom: 100vh;
-    cursor: pointer;
+
     img {
       border-radius: 5px;
       width: 160px;
       height: 160px;
     }
+    a {
+      color: white;
+      text-decoration: none;
+    }
     .album-recommended {
+      cursor: pointer;
       background-color: #1d1d1d;
       padding: 15px;
       border-radius: 10px;
@@ -334,6 +354,9 @@ main {
         padding-block: 5px;
         color: gray;
         font-size: 14px;
+        &:hover {
+          text-decoration: underline;
+        }
       }
       &:hover {
         background-color: $bg-dark-light;
@@ -348,13 +371,12 @@ main {
 }
 // ! END MAIN
 
-
 // * START MAIN2 PAGINA 2 [ANTONINO] -->
-#main-pagina-2{
-  background: linear-gradient(180deg, rgba(183,158,65,1) 0%, rgba(14,13,13,1) 45%);
+#main-pagina-2 {
+  background: linear-gradient(180deg, rgba(183, 158, 65, 1) 0%, rgba(14, 13, 13, 1) 45%);
   .upgrade-2 {
     background: black;
-    color:white;
+    color: white;
     border: 1px solid black;
     border-radius: 20px;
     padding: 5px;
@@ -368,14 +390,13 @@ main {
       border: 2px solid white;
     }
   }
-  #album-2{
+  #album-2 {
     display: flex;
     padding: 5px;
     margin-top: 30px;
   }
 }
 // ! END MAIN2 PAGINA 2 [ANTONINO] -->
-
 
 #sidebar-right {
   width: 20vw;
@@ -472,6 +493,13 @@ main {
     margin: 10px;
     display: flex;
     align-items: center;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+        color: gray;
+      }
+    }
     img {
       width: 60px;
       height: 60px;

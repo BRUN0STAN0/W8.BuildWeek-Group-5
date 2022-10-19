@@ -11,8 +11,8 @@ window.onload = () => {
 };
 
 async function loadJSON() {
-  for (let p of buonasalvePlaylist) {
-    let musicResponse = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${p}`);
+  for (let playlist of buonasalvePlaylist) {
+    let musicResponse = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${playlist}`);
     let musicObject = await musicResponse.json();
     let musicArray = musicObject.data;
     let musicElement = musicArray[0];

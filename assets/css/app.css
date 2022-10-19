@@ -194,6 +194,16 @@ main #albums-ads #title-song {
     letter-spacing: 0;
   }
 }
+main #albums-ads a {
+  color: gray;
+  text-decoration: none;
+}
+main #albums-ads a:hover {
+  text-decoration: underline;
+}
+main #albums-ads #author {
+  color: gray;
+}
 main #albums-ads .button {
   border-radius: 40px;
   padding: 20px;
@@ -266,6 +276,10 @@ main #albums-favorites .album-favorite {
     width: 100%;
   }
 }
+main #albums-favorites a {
+  color: white;
+  text-decoration: none;
+}
 main #albums-favorites .favorite_text {
   margin-left: 0.8em;
   margin-top: 0.8em;
@@ -302,14 +316,18 @@ main .album-title-recommended {
 main #albums-recommended {
   display: flex;
   margin-bottom: 100vh;
-  cursor: pointer;
 }
 main #albums-recommended img {
   border-radius: 5px;
   width: 160px;
   height: 160px;
 }
+main #albums-recommended a {
+  color: white;
+  text-decoration: none;
+}
 main #albums-recommended .album-recommended {
+  cursor: pointer;
   background-color: #1d1d1d;
   padding: 15px;
   border-radius: 10px;
@@ -324,6 +342,9 @@ main #albums-recommended .album-recommended #author {
   padding-block: 5px;
   color: gray;
   font-size: 14px;
+}
+main #albums-recommended .album-recommended #author:hover {
+  text-decoration: underline;
 }
 main #albums-recommended .album-recommended:hover {
   background-color: #2C2C2C;
@@ -478,6 +499,13 @@ main #albums-recommended .album-recommended:hover {
   margin: 10px;
   display: flex;
   align-items: center;
+}
+#navbar-bottom #navbar-left a {
+  text-decoration: none;
+}
+#navbar-bottom #navbar-left a:hover {
+  text-decoration: underline;
+  color: gray;
 }
 #navbar-bottom #navbar-left img {
   width: 60px;
