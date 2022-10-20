@@ -538,6 +538,10 @@ main {
     padding-left: 20px;
     font-size: 1.8rem;
   }
+  .bi-radioactive{
+    font-size:1.5em;
+    color:$primary;
+  }
   h1{
     font-size: 5rem;
     font-weight: bold;
@@ -570,32 +574,37 @@ main {
     color:grey;
     margin-left:20px;
   }
-  table{
-    width:100%;
-    margin:10px;
-    color:grey;
-  }
-  .th{
-    width: 10%;
-  }
-  ol{
-    list-style:decimal;
-    width:100%;
-    #titolo{
-      display:inline-block;
-      width: 45%;
+  .box-flex{
+    display:flex;
+    justify-content: space-between;
+    margin-left:10px;
+    p{
+      color:grey;
+      font-weight:bold;
+      margin-right:30px;
+      
     }
-     li{
-      width:100%;
-       p{
-        display: inline-block;
-       }
-       #ascolti{
-        margin-right:400px;
-       }
-     }
+    li{
+      margin-left:20px;
+      color:grey;
+       font-weight:bold;
+      p{
+        margin-top:0px;
+        margin-bottom: -15px;
+      }
+      p:nth-child(1){
+        color:lightgrey;
+      }
+    }
   }
-  
+  .p-left{
+    margin-left:60px;
+  }
+  hr{
+    opacity:0.1;
+    margin-top:5px;
+    width:100%;
+  }
 }
 // ! END MAIN2 PAGINA 2 [ANTONINO] -->
 
