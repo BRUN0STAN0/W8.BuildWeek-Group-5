@@ -27,7 +27,6 @@ async function fetchTrackList(url) {
 function renderMusic(music) {
   let ol = document.querySelector("ol");
   ol.innerHTML = "";
-  console.log(music[0]);
   let i = 1;
   for (let song of music) {
     let li = document.createElement("li");

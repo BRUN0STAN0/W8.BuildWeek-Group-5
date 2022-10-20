@@ -5,7 +5,7 @@ let authors = document.querySelectorAll("#author");
 let navbarLeft = document.getElementById("navbar-left");
 let navbarRight = document.getElementById("navbar-right");
 
-let buonasalvePlaylist = ["ads", "Monday", "Left", "Right", "Up", "Best", "Life", "ciia", "Summer", "Cipolli", "ludovico", "giuliano", "Motivation", "ciao", "Kill", "We", "Possiamo"];
+let buonasalvePlaylist = ["ads", "Monday", "Left", "Right", "Up", "Best", "Life", "ciia", "Summer", "Cipolli", "ludovico", "Charlie", "Lil%20Baby", "Cardi%20B", "Tina%20Turner", "We", "Possiamo"];
 let buonasalvePlaylistFETCH = [];
 window.onload = () => {
   loadJSON();
@@ -35,7 +35,7 @@ function iterateArray(musicArray) {
   }
   // ! END CICLO PER LINKARE L'AUDIO
   for (let i = 0; i < 16; i++) {
-    previewImg[i].src = musicArray[i].album.cover;
+    previewImg[i].src = musicArray[i].album.cover_medium;
     // console.log(previewImg[i].parentElement.parentElement);
   }
   for (let i = 0; i < 7; i++) {

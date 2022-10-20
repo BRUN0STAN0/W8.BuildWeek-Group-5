@@ -324,6 +324,9 @@ main {
         background-color: black;
         border: 2px solid white;
       }
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
     }
     .developers {
       cursor: default;
@@ -373,7 +376,10 @@ main {
     #title-song {
       font-weight: 600;
       letter-spacing: -3px;
-
+      @media screen and (max-width: 1400px) {
+        font-size: 40px;
+        letter-spacing: 0;
+      }
       @media screen and (max-width: 1000px) {
         font-size: 30px;
         letter-spacing: 0;
@@ -415,7 +421,7 @@ main {
       padding: 5px;
       justify-content: flex-end;
       font-weight: bold;
-      @media screen and (max-width: 1000px) {
+      @media screen and (max-width: 1200px) {
         display: none;
       }
     }
@@ -511,22 +517,23 @@ main {
   #albums-recommended {
     display: flex;
     margin-bottom: 100vh;
-
     img {
       border-radius: 5px;
-      width: 160px;
-      height: 160px;
+      width: 100%;
+      height: 100%;
     }
     a {
       color: white;
       text-decoration: none;
     }
     .album-recommended {
+      width: 200px;
       cursor: pointer;
       background-color: #1d1d1d;
       padding: 15px;
-      border-radius: 10px;
-      margin-right: 32px;
+      border-radius: 15px;
+      margin-right: 10px;
+      margin-bottom: 20px;
       #title-song {
         padding-block: 10px;
         font-weight: 900;
@@ -544,6 +551,15 @@ main {
         background-color: $bg-dark-light;
         transition: 0.5s;
       }
+      @media screen and (max-width: 800px) {
+        width: 45%;
+      }
+      @media screen and (max-width: 500px) {
+        width: 100%;
+      }
+    }
+    @media screen and (max-width: 800px) {
+      flex-wrap: wrap;
     }
   }
 
@@ -587,16 +603,26 @@ main {
       background-color: black;
       border: 2px solid white;
     }
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
   }
   #album-2 {
     display: flex;
     padding: 5px;
     margin-top: 30px;
+    #header-img {
+      width: 200px;
+      height: 200px;
+    }
   }
   .colum-2 {
     padding-top: 20px;
     padding-left: 20px;
     font-size: 1.8rem;
+    #title-song-2 {
+      font-size: 30px;
+    }
   }
   .bi-radioactive {
     font-size: 1.5em;
@@ -901,7 +927,7 @@ main {
 }
 // ! END NAVBAR BOTTOM [BRUNO] -->
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   #sidebar-left {
     display: none;
   }
