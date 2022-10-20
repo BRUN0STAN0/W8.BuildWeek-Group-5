@@ -36,10 +36,15 @@ function iterateArray(musicArray) {
   // ! END CICLO PER LINKARE L'AUDIO
   for (let i = 0; i < 16; i++) {
     previewImg[i].src = musicArray[i].album.cover;
+    // console.log(previewImg[i].parentElement.parentElement);
   }
   for (let i = 0; i < 7; i++) {
     authors[i].innerHTML = musicArray[i].artist.name;
+    authors[i].outerHTML = `<a href="./artist.html?id=${musicArray[i].artist.id}">${authors[i].outerHTML} </a>`;
     titles[i].innerHTML = musicArray[i].title_short;
+  }
+  for (let i = 10; i < 15; i++) {
+    previewImg[i].parentElement.parentElement.outerHTML = `<a href="./album.html?id=${musicArray[i].album.id}">${previewImg[i].parentElement.parentElement.outerHTML}</a>`;
   }
 }
 

@@ -1,23 +1,20 @@
-let artistNameArray = window.location.href.split("=");
+let queryString = new URLSearchParams(window.location.search);
+let id = queryString.get("id");
 
-let buonasalvePlaylistFETCH = [];
 window.onload = () => {
   loadJSON();
 };
 
 async function loadJSON() {
-  let musicResponse = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${artistNameArray[1]}`);
+  let musicResponse = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`);
   let musicObject = await musicResponse.json();
-  let musicArray = musicObject.data;
-  console.log(musicArray);
-  let musicElement = musicArray[0];
-  buonasalvePlaylistFETCH.push(musicElement);
-  funzioneACaso();
+  console.log(musicObject);
+  titoloHeader(musicObject);
 }
 
-function funzioneACaso() {
+function titoloHeader(music) {
   let headerTitleArtist = document.getElementById("header_title");
-
-  headerTitleArtist.innerHTML = buonasalvePlaylistFETCH[0].artist.name;
-  console.log(headerTitleArtist.innerHTML);
+  headerTitleArtist.innerHTML = music.name;
+  let headerPreviewImg = document.getElementById("header_previewImg");
+  headerPreviewImg.style.backgroundImage = `url(${music.picture_big})`;
 }
