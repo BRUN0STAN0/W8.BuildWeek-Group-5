@@ -13,7 +13,9 @@ body {
   overflow: hidden;
 }
 // ! END GENERAL SETTINGS -->
-
+#music-link {
+  display: none;
+}
 .homepage_container {
   display: flex;
 }
@@ -780,6 +782,7 @@ main {
   justify-content: space-between;
   align-items: center;
   color: white;
+  overflow: hidden;
   cursor: default;
 
   #navbar-left {

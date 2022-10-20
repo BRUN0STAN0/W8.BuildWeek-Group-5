@@ -1,15 +1,18 @@
 let queryString = new URLSearchParams(window.location.search);
 let id = queryString.get("id");
 let musicObject;
-
+let previewImg = document.querySelectorAll("#preview-img");
+let titles = document.querySelectorAll("#title-song");
+let authors = document.querySelectorAll("#author");
 window.onload = () => {
   loadJSON();
 };
 
+let musicArray;
 async function loadJSON() {
   let musicResponse = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`);
   musicObject = await musicResponse.json();
-  let musicArray = musicObject.tracks.data;
+  musicArray = musicObject.tracks.data;
   console.log(musicArray);
   renderMusic(musicArray);
 }
@@ -28,23 +31,27 @@ function renderMusic(music) {
 
   let ol = document.querySelector("ol");
   ol.innerHTML = "";
+  let i = 1;
   for (let song of music) {
     let div = document.createElement("div");
     div.className = "box-flex";
     ol.appendChild(div);
-    div.innerHTML = ` <li>
-                        <p id="title-song">${song.title}</p>
+    div.innerHTML = ` <li i="${i}">
+                        <p onclick="navbarRender(event)" id="title-song">${song.title}</p>
                         <p id="title-artis">${song.artist.name}</p>
                     </li>
                     <p id="riproduzioni">${song.rank}</p>
                     <p id="durata">${song.duration}s</p>
+                    <p id="music-link">${song.preview}</p>
                     `;
+    i++;
   }
 }
 
 let linkMp3;
 
 // * START TRACKBAR
+let audio = new Audio();
 let navbarLeft = document.getElementById("navbar-left");
 let navbarRight = document.getElementById("navbar-right");
 let timer = 0;
@@ -57,7 +64,7 @@ let seconds = 0;
 let minutes = 0;
 let trackSeconds = document.getElementById("track-seconds");
 let trackDefault = document.getElementsByClassName("track-default")[0];
-
+let musicLink;
 playAds.addEventListener("click", navbarRenderAds);
 play.addEventListener("click", playFunctionNavbar);
 pause.addEventListener("click", pauseFunction);
@@ -87,7 +94,9 @@ function playFunctionNavbar() {
   navbarRight.style.opacity = 1;
   play.style.display = "none";
   pause.style.display = "inline";
-  audio = new Audio(linkMp3);
+  audio.src = musicLink;
+
+  audio.load();
   pauseTrackBarSeconds();
   pauseSeconds();
   audio.play();
@@ -106,13 +115,22 @@ function pauseFunction() {
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function navbarRender(eventClick) {
-  let i = eventClick.target.parentElement.children[0].innerHTML - 1;
-  linkMp3 = musicArray[i].preview;
+  let i = eventClick.target.parentElement.attributes.i.value;
+  // console.log(eventClick.target.parentElement.attributes.i.value);
+  // console.log(eventClick.target.parentElement.parentElement.children[3].innerHTML);
+  musicLink = eventClick.target.parentElement.parentElement.children[3].innerHTML;
+  console.log(musicLink);
+
+  audio.src = musicLink;
+  audio.load();
+
+  previewImg[0].src = musicArray[i - 1].album.cover;
+  titles[1].innerHTML = musicArray[i - 1].title;
+  authors[0].innerHTML = musicArray[i - 1].artist.name;
+
   navbarLeft.style.opacity = 1;
   navbarRight.style.opacity = 1;
-  previewImg[0].src = musicArray[i].album.cover;
-  titles[0].innerHTML = musicArray[i].title;
-  authors[0].innerHTML = musicArray[i].artist.name;
+
   audio.pause();
   resetTrackBarSeconds();
   pauseFunction();
@@ -122,14 +140,21 @@ function navbarRenderAds(eventClick) {
   audio.pause();
 
   let i = eventClick.target.parentElement.children[0].innerHTML - 1;
-  let linkMp3 = musicArray[0].preview;
-  audio = new Audio(linkMp3);
+  linkMp3 = musicArray[0].preview;
+  console.log(linkMp3);
+  audio.src = linkMp3;
+  audio.load();
+  audio.play();
+  isPlay = true;
   navbarLeft.style.opacity = 1;
   navbarRight.style.opacity = 1;
   play.style.display = "none";
   pause.style.display = "inline";
+
   previewImg[0].src = musicArray[0].album.cover;
-  titles[0].innerHTML = musicArray[0].title;
+
+  titles[1].innerHTML = musicArray[0].title;
+
   authors[0].innerHTML = musicArray[0].artist.name;
   resetTrackBarSeconds();
 }
