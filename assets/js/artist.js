@@ -1,6 +1,7 @@
 let previewImg = document.querySelectorAll("#preview-img");
 let titles = document.querySelectorAll("#title-song");
 let authors = document.querySelectorAll("#author");
+let audio;
 
 let queryString = new URLSearchParams(window.location.search);
 let id = queryString.get("id");
@@ -47,7 +48,12 @@ function titoloHeader(music) {
   headerTitleArtist.innerHTML = music.name;
   let headerPreviewImg = document.getElementById("header_previewImg");
   headerPreviewImg.style.backgroundImage = `url(${music.picture_big})`;
+  let authorImg = document.getElementById("author-img");
+  authorImg.style.backgroundImage = `url(${music.picture_small})`;
+  let authorDetail = document.getElementById("detail-author");
+  authorDetail.innerHTML = music.name;
 }
+let linkMp3;
 
 // * START TRACKBAR
 let navbarLeft = document.getElementById("navbar-left");
@@ -92,6 +98,7 @@ function playFunctionNavbar() {
   navbarRight.style.opacity = 1;
   play.style.display = "none";
   pause.style.display = "inline";
+  audio = new Audio(linkMp3);
   pauseTrackBarSeconds();
   pauseSeconds();
   audio.play();
@@ -106,14 +113,12 @@ function pauseFunction() {
   intervalTrackBarSeconds;
   intervalSeconds;
 }
-
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function navbarRender(eventClick) {
   let i = eventClick.target.parentElement.children[0].innerHTML - 1;
-  let linkMp3 = musicArray[i].preview;
-  audio = new Audio(linkMp3);
+  linkMp3 = musicArray[i].preview;
   navbarLeft.style.opacity = 1;
   navbarRight.style.opacity = 1;
   previewImg[0].src = musicArray[i].album.cover;
@@ -121,9 +126,12 @@ function navbarRender(eventClick) {
   authors[0].innerHTML = musicArray[i].artist.name;
   audio.pause();
   resetTrackBarSeconds();
+  pauseFunction();
 }
 
 function navbarRenderAds(eventClick) {
+  audio.pause();
+
   let i = eventClick.target.parentElement.children[0].innerHTML - 1;
   let linkMp3 = musicArray[0].preview;
   audio = new Audio(linkMp3);
@@ -134,7 +142,6 @@ function navbarRenderAds(eventClick) {
   previewImg[0].src = musicArray[0].album.cover;
   titles[0].innerHTML = musicArray[0].title;
   authors[0].innerHTML = musicArray[0].artist.name;
-  audio.play();
   resetTrackBarSeconds();
 }
 

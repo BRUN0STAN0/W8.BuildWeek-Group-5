@@ -64,11 +64,14 @@ body {
     height: 40vh;
     padding-left: 1em;
     padding-bottom: 1em;
-    background-position: top;
+    background-position: center;
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: end;
+    @media screen and (min-width: 1100px) {
+      background-position: top;
+    }
     #verified {
       font-size: 0.8rem;
       i {
