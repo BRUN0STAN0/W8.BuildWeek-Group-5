@@ -507,6 +507,10 @@ main #albums-recommended .album-recommended:hover {
   padding-left: 20px;
   font-size: 1.8rem;
 }
+#main-pagina-2 .bi-radioactive {
+  font-size: 1.5em;
+  color: #1ED760;
+}
 #main-pagina-2 h1 {
   font-size: 5rem;
   font-weight: bold;
@@ -538,30 +542,35 @@ main #albums-recommended .album-recommended:hover {
   color: grey;
   margin-left: 20px;
 }
-#main-pagina-2 table {
-  width: 100%;
-  margin: 10px;
+#main-pagina-2 .box-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+#main-pagina-2 .box-flex p {
   color: grey;
+  font-weight: bold;
+  margin-right: 30px;
 }
-#main-pagina-2 .th {
-  width: 10%;
+#main-pagina-2 .box-flex li {
+  margin-left: 20px;
+  color: grey;
+  font-weight: bold;
 }
-#main-pagina-2 ol {
-  list-style: decimal;
+#main-pagina-2 .box-flex li p {
+  margin-top: 0px;
+  margin-bottom: -15px;
+}
+#main-pagina-2 .box-flex li p:nth-child(1) {
+  color: lightgrey;
+}
+#main-pagina-2 .p-left {
+  margin-left: 60px;
+}
+#main-pagina-2 hr {
+  opacity: 0.1;
+  margin-top: 5px;
   width: 100%;
-}
-#main-pagina-2 ol #titolo {
-  display: inline-block;
-  width: 45%;
-}
-#main-pagina-2 ol li {
-  width: 100%;
-}
-#main-pagina-2 ol li p {
-  display: inline-block;
-}
-#main-pagina-2 ol li #ascolti {
-  margin-right: 400px;
 }
 
 #sidebar-right {
