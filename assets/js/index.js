@@ -2,10 +2,11 @@ let previewImg = document.querySelectorAll("#preview-img");
 let audio;
 let titles = document.querySelectorAll("#title-song");
 let authors = document.querySelectorAll("#author");
-let buonasalvePlaylist = ["ads", "Monday", "Left", "Right", "Up", "Best", "Life", "ciia", "Summer", "Cipolli", "ludovico", "giuliano", "Motivation", "ciao", "Kill", "We", "Possiamo"];
-let buonasalvePlaylistFETCH = [];
 let navbarLeft = document.getElementById("navbar-left");
 let navbarRight = document.getElementById("navbar-right");
+
+let buonasalvePlaylist = ["ads", "Monday", "Left", "Right", "Up", "Best", "Life", "ciia", "Summer", "Cipolli", "ludovico", "giuliano", "Motivation", "ciao", "Kill", "We", "Possiamo"];
+let buonasalvePlaylistFETCH = [];
 window.onload = () => {
   loadJSON();
 };
@@ -193,17 +194,3 @@ volumeSet.addEventListener("mousemove", function volumeSlide(event) {
 });
 
 // ! END VOLUME
-
-let albumsRecommended = document.getElementsByClassName("album-recommended");
-
-for (let recommended of albumsRecommended) {
-  recommended.addEventListener("click", funzioneACaso);
-}
-
-function funzioneACaso() {
-  document.location.href = "artist.html";
-  let headerTitleArtist = document.getElementById("header_title");
-
-  headerTitleArtist.innerHTML = buonasalvePlaylistFETCH[i].artist.name;
-  console.log(headerTitleArtist.innerHTML);
-}
