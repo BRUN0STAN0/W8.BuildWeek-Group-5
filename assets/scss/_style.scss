@@ -63,10 +63,11 @@ body {
     }
    }
    .header_artistPage {
-    height: 20vw;
+    height: 40vh;
     padding-left: 1em;
     padding-bottom: 1em;
-    background-color: lightcoral;
+    background-position: center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -96,13 +97,50 @@ body {
         font-size: 1rem;
         font-weight: 700;
       }
-      ul {
-        list-style: none;
+      ol {
+        
         li {
           margin-left: 1em;
-          margin-bottom: 0.8em;
+          margin-bottom: 1em;
+          width: 90%;
           font-size: 0.8rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          
+          #song {
+            display: flex;
+            align-items: center;
+          }
+
+          .popular_img {
+            width: 30px;
+            height: 30px;
+            margin-inline: 20px;
+            
+          }
+
+          #num_popular {
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-block: auto;
+          }
+
+          #song-title {
+            font-size: 0.8rem;
+            font-weight: 400;
+            display: inline-block;
+            margin-block: auto;
+          }
+
+          #num-listened , #duration{
+            font-size: 0.8rem;
+            color: grey
+          }
+
+          
         }
+
       }
       #visualize-other {
         font-size: 0.6rem;
@@ -115,7 +153,8 @@ body {
 
     #liked {
       width: 40%;
-      padding-right: 30px;
+      padding-left: 20px;
+      padding-right: 10px;
       padding-top: 1em;
       >p{
         font-size: 1rem;
@@ -131,6 +170,18 @@ body {
         font-size: 0.6rem;
         color: grey;
       }
+      }
+      #author-img {
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        border: 0 solid;
+        border-radius: 50%;
+        background-color: coral;
+        margin-right: 10px;
+        @media screen and (max-width: 800px) {
+          display: none;
+        }
       }
 
       }
