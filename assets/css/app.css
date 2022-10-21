@@ -13,6 +13,10 @@ body {
   overflow: hidden;
 }
 
+#music-link {
+  display: none;
+}
+
 .homepage_container {
   display: flex;
 }
@@ -648,15 +652,30 @@ main #albums-recommended .album-recommended:hover {
   color: grey;
   margin-left: 20px;
 }
+#main-pagina-2 .container-trasparent {
+  background-color: rgba(0, 0, 0, 0.493);
+  border-radius: 10px;
+  box-shadow: 0px 0px 100px black;
+  margin-top: 20px;
+}
 #main-pagina-2 .box-flex {
   display: flex;
-  justify-content: space-between;
   margin-left: 10px;
+  justify-content: space-between;
 }
 #main-pagina-2 .box-flex p {
   color: grey;
   font-weight: bold;
   margin-right: 30px;
+}
+#main-pagina-2 .box-flex .titolo {
+  width: 40vw;
+}
+#main-pagina-2 .box-flex #title-song {
+  width: 40vw;
+}
+#main-pagina-2 .box-flex #riproduzioni {
+  margin-right: 0px;
 }
 #main-pagina-2 .box-flex li {
   margin-left: 20px;
@@ -794,6 +813,7 @@ main #albums-recommended .album-recommended:hover {
   justify-content: space-between;
   align-items: center;
   color: white;
+  overflow: hidden;
   cursor: default;
 }
 #navbar-bottom #navbar-left {
@@ -904,7 +924,7 @@ main #albums-recommended .album-recommended:hover {
 #navbar-bottom #navbar-right .volume #volume-set {
   position: relative;
   top: 4px;
-  width: 20px;
+  width: 80px;
   height: 4px;
   background-color: rgb(255, 255, 255);
   border-radius: 50px;
@@ -946,5 +966,9 @@ main #albums-recommended .album-recommended:hover {
   }
 }
 .link-mp3 {
+  display: none;
+}
+
+#search-input {
   display: none;
 }

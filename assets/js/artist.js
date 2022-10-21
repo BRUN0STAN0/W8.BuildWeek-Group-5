@@ -230,10 +230,30 @@ volumeSet.addEventListener("mousemove", function volumeSlide(event) {
     let x = event.offsetX;
     if (event.target.className == "volume-set") {
       x = Math.floor(x);
-      if (x < 0) x = 0;
+      if (x < 10) {
+        x = 10;
+        audio.volume = 0.1;
+      }
       if (x > volumeRangeWidth) x = volumeRangeWidth;
       volumeSet.style.width = x + 5 + "px";
+      audio.volume = `${0}.${x}`;
     }
+  }
+});
+
+let volumeOnOff = document.getElementById("volume-icon");
+let audioOn = false;
+volumeOnOff.addEventListener("click", () => {
+  if (audioOn) {
+    audio.volume = 1;
+    volumeOnOff.classList.toggle("fa-volume-up");
+    volumeOnOff.classList.toggle("fa-volume-off");
+    audioOn = false;
+  } else {
+    audio.volume = 0;
+    volumeOnOff.classList.toggle("fa-volume-up");
+    volumeOnOff.classList.toggle("fa-volume-off");
+    audioOn = true;
   }
 });
 

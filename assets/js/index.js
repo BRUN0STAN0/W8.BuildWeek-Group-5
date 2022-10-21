@@ -1,5 +1,5 @@
 let previewImg = document.querySelectorAll("#preview-img");
-let audio;
+let audio = new Audio();
 let titles = document.querySelectorAll("#title-song");
 let authors = document.querySelectorAll("#author");
 let navbarLeft = document.getElementById("navbar-left");
@@ -20,6 +20,15 @@ async function loadJSON() {
     buonasalvePlaylistFETCH.push(musicElement);
   }
   iterateArray(buonasalvePlaylistFETCH);
+}
+
+let musicArray;
+let valueSearchInput;
+async function loadJSONSearchInput() {
+  let musicResponse = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${valueSearchInput}`);
+  let musicObject = await musicResponse.json();
+  musicArray = musicObject.data;
+  renderSearchResult(musicArray);
 }
 
 function iterateArray(musicArray) {
@@ -110,7 +119,7 @@ function selectSongPlay(eventClick) {
   titles[titles.length - 1].innerHTML = buonasalvePlaylistFETCH[0].title_short;
   authors[authors.length - 1].innerHTML = buonasalvePlaylistFETCH[0].artist.name;
   let linkMp3 = eventClick[0].parentElement.children[3].innerHTML;
-  audio = new Audio(linkMp3);
+  audio.src = linkMp3;
   audio.play();
 }
 
@@ -191,11 +200,100 @@ volumeSet.addEventListener("mousemove", function volumeSlide(event) {
     let x = event.offsetX;
     if (event.target.className == "volume-set") {
       x = Math.floor(x);
-      if (x < 0) x = 0;
+      if (x < 10) {
+        x = 10;
+        audio.volume = 0.1;
+      }
       if (x > volumeRangeWidth) x = volumeRangeWidth;
       volumeSet.style.width = x + 5 + "px";
+      audio.volume = `${0}.${x}`;
     }
   }
 });
 
+let volumeOnOff = document.getElementById("volume-icon");
+let audioOn = false;
+volumeOnOff.addEventListener("click", () => {
+  if (audioOn) {
+    audio.volume = 1;
+    volumeOnOff.classList.toggle("fa-volume-up");
+    volumeOnOff.classList.toggle("fa-volume-off");
+    audioOn = false;
+  } else {
+    audio.volume = 0;
+    volumeOnOff.classList.toggle("fa-volume-up");
+    volumeOnOff.classList.toggle("fa-volume-off");
+    audioOn = true;
+  }
+});
+
 // ! END VOLUME
+
+// * START SEARCH FUNCTION
+let searchBarContainer = document.getElementById("search-bar-container");
+let searchBar = document.getElementById("search-bar");
+let searchInput = document.getElementById("search-input");
+searchBarContainer.addEventListener("click", () => {
+  searchInput.style.display = "block";
+  searchBar.style.display = "none";
+});
+
+let originalMain = document.querySelector("main").innerHTML;
+
+searchInput.addEventListener("keyup", (event) => {
+  valueSearchInput = event.target.value;
+  loadJSONSearchInput();
+  document.querySelector("main").innerHTML = `<div id="albums-recommended" style="flex-wrap: wrap"></div>`;
+  // if (event.target.value == "") {
+  //   console.log(originalMain);
+  //   loadJSON();
+  //   document.querySelector("main").innerHTML = originalMain;
+  // }
+});
+
+function renderSearchResult(music) {
+  let albumsRecommended = document.querySelector("#albums-recommended");
+  let i = 1;
+  for (let song of music) {
+    albumsRecommended.innerHTML += ` <div i=${i} class="album-recommended" >
+                                        <div>
+                                          <img  onclick="takeLink2(event)" id="preview-img" src=${song.album.cover_medium} />
+                                        </div>
+                                        <p onclick="takeLink(event)" id="title-song">${song.title}</p>
+                                        <p onclick="takeLink(event)" id="author">${song.artist.name}</p>
+                                        <p class="link-mp3">${song.preview}</p>
+                                      </div>`;
+    i++;
+  }
+}
+
+let linkMp3;
+let i;
+function takeLink(eventClick) {
+  linkMp3 = eventClick.target.parentElement.children[3].innerHTML;
+  i = eventClick.target.parentElement.attributes.i.value;
+  audio.src = linkMp3;
+  navbarRender();
+}
+
+function takeLink2(eventClick) {
+  linkMp3 = eventClick.target.parentElement.parentElement.children[3].innerHTML;
+  i = eventClick.target.parentElement.parentElement.attributes.i.value;
+  audio.src = linkMp3;
+  navbarRender();
+}
+
+function navbarRender() {
+  linkMp3 = musicArray[i].preview;
+  navbarLeft.style.opacity = 1;
+  navbarRight.style.opacity = 1;
+  previewImg[previewImg.length - 1].src = musicArray[i + 1].album.cover;
+  titles[titles.length - 1].innerHTML = musicArray[i + 1].title;
+  authors[authors.length - 1].innerHTML = musicArray[i + 1].artist.name;
+  console.log(authors);
+  audio.pause();
+  resetTrackBarSeconds();
+  pauseFunction();
+}
+
+// ! END SEARCH FUNCTION
