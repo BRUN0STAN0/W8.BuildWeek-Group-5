@@ -269,15 +269,27 @@ function renderSearchResult(music) {
 
 let linkMp3;
 let i;
+let cover;
+let title;
+let author;
 function takeLink(eventClick) {
   linkMp3 = eventClick.target.parentElement.children[3].innerHTML;
+  cover = eventClick.target.parentElement.children[0].children[0].src;
+  title = eventClick.target.parentElement.children[1].innerHTML;
+  author = eventClick.target.parentElement.children[2].innerHTML;
+
   i = eventClick.target.parentElement.attributes.i.value;
   audio.src = linkMp3;
+
   navbarRender();
 }
 
 function takeLink2(eventClick) {
   linkMp3 = eventClick.target.parentElement.parentElement.children[3].innerHTML;
+  cover = eventClick.target.src;
+  title = eventClick.target.parentElement.parentElement.children[1].innerHTML;
+  author = eventClick.target.parentElement.parentElement.children[2].innerHTML;
+
   i = eventClick.target.parentElement.parentElement.attributes.i.value;
   audio.src = linkMp3;
   navbarRender();
@@ -287,10 +299,11 @@ function navbarRender() {
   linkMp3 = musicArray[i].preview;
   navbarLeft.style.opacity = 1;
   navbarRight.style.opacity = 1;
-  previewImg[previewImg.length - 1].src = musicArray[i + 1].album.cover;
-  titles[titles.length - 1].innerHTML = musicArray[i + 1].title;
-  authors[authors.length - 1].innerHTML = musicArray[i + 1].artist.name;
-  console.log(authors);
+
+  previewImg[previewImg.length - 1].src = cover;
+  titles[titles.length - 1].innerHTML = title;
+  authors[authors.length - 1].innerHTML = author;
+
   audio.pause();
   resetTrackBarSeconds();
   pauseFunction();
