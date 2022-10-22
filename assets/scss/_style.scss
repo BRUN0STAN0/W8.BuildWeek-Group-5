@@ -968,3 +968,30 @@ main {
 #search-input {
   display: none;
 }
+
+@media screen and (max-width: 1000px) {
+  #sidebar-left {
+    display: block;
+    width: 200vw;
+    height: 20px;
+    position: fixed;
+  }
+  #search-bar-container {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100vw;
+  }
+  #search-input {
+    width: 100vw;
+    height: 20px;
+    background-color: transparent;
+    color: white;
+    border: 0;
+    outline: 0;
+  }
+  #search-bar {
+  }
+}
